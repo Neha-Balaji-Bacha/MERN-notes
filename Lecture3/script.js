@@ -1,0 +1,1 @@
+console.log("welcome to naha for lecture 3");
