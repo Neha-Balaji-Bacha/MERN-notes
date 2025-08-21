@@ -101,7 +101,7 @@
 // const students = new Array["neha","nikita","nikhil","kapil","vaish","dixsha"];
 
 //array manipulation
-const iplTeams = ["csk","rcb","mi","srh"];
+// const iplTeams = ["csk","rcb","mi","srh"];
 // iplTeams.push("Gt");
 // console.log(iplTeams);
 // iplTeams.unshift("kkr");
@@ -114,7 +114,7 @@ console.log(iplTeams.slice(2));
 console.log(iplTeams.slice(-1));
 
 
-//SIR NOTES
+//Class Notes
 console.log("Hello World");
 
 /* FUNCTIONS
