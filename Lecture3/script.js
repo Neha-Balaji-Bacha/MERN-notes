@@ -15,7 +15,7 @@
 // let prefix = [];
 // prefix[0] = arr[0]
 // for(let i=1;i<arr.length;i++){
-//     prefix[i] = prefix[i-1]+prefix[i];
+//     prefix[i] = prefix[i-1]+arr[i];
 // }
 // console.log(prefix);
 
@@ -27,10 +27,7 @@
 // const n = "abc";
 // console.log(n * 12);
 
-
 //array assignment
-
-
 
 //classes notes
 /*

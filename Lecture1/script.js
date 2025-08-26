@@ -35,13 +35,11 @@
 // result("Rahul","website");
 // result("Rani"); //undefined
 
-
 //NaN
 // function sum(a,b){
 //     console.log(a+b);
 // }
 // sum(8);
-
 
 //nested function
 // function personDetails(name,birthyear){
@@ -52,7 +50,6 @@
 //     return 2025 - birthyear;
 // }
 // personDetails("Neha",2024);
-
 
 //must same parameter name and num*num
 // function squared(num){
@@ -67,7 +64,6 @@
 // console.log(squared(20));
 // console.log(squared(21));
 
-
 // function result(name,server="App"){
 //     console.log("Hello " + name + server);
 // }
@@ -78,15 +74,12 @@
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // console.log(students[4]);
 
-
-
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // for(let i=0;i<students.length;i++){
 //     if(i%2 === 0){
 //         console.log(Number(i+1),students[i]);
 //     }
 //}
-
 
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // for(let i in students){
@@ -110,12 +103,11 @@
 // console.log(iplTeams);
 // iplTeams.pop("Gt");
 // console.log(iplTeams);
-console.log(iplTeams.slice(2));
-console.log(iplTeams.slice(-1));
+// console.log(iplTeams.slice(2));
+// console.log(iplTeams.slice(-1));
 
-
-//Class Notes
-console.log("Hello World");
+// //Class Notes
+// console.log("Hello World");
 
 /* FUNCTIONS
  - reuse some line of code  - for loop?
@@ -124,7 +116,6 @@ console.log("Hello World");
  - whenever we need, we can have a function of that action, and call it
  - block of code that performs specific tasks - true
  - function is set of code that allows reusability to perform same task
-
 
 
  - when we want to use some specific lines of code (code snippet) to be executed multiple times
@@ -331,9 +322,8 @@ console.log("IPL teams: ", iplTeams);
 
 //slice
 // keeps all elements after first 2 elements
-console.log("Sliced: ", iplTeams.slice(2)); 
+console.log("Sliced: ", iplTeams.slice(2));
 // keeps 2 elements from end
 console.log("Negative Sliced: ", iplTeams.slice(-2));
-
 
 console.log("Real teams: ", iplTeams);

@@ -8,7 +8,7 @@
 // console.log(teams);
 
 
-const teams = ["CSK","RCB","SRH","KKR","GT"];
+//const teams = ["CSK","RCB","SRH","KKR","GT"];
 //indexof function
 // teams.pop();
 // teams.push("LSG");
