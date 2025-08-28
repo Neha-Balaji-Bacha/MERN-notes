@@ -38,23 +38,23 @@
 // console.log({ sum });
 
 //sum of all odd coloumn elements
-const arr = [
-  [1, 2, 3, 4, 5, 6],
-  [2, 6, 12, 43, 3],
-  [8, 10, 34],
-];
-function mat(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr[i].length; j++) {
-      if (j % 2 != 0) {
-        sum += arr[i][j];
-      }
-    }
-  }
-  return sum;
-}
-console.log(mat(arr));
+// const arr = [
+//   [1, 2, 3, 4, 5, 6],
+//   [2, 6, 12, 43, 3],
+//   [8, 10, 34],
+// ];
+// function mat(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//       if (j % 2 != 0) {
+//         sum += arr[i][j];
+//       }
+//     }
+//   }
+//   return sum;
+// }
+// console.log(mat(arr));
 
 //print all odd coloumn element
 // const arr = [
