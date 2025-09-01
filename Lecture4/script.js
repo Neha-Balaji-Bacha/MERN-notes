@@ -4,23 +4,23 @@
 
 //YESTERDAY GIVEN TASK : TO FIND THE FREQUENCY OF ELEMENTS IN AN ARRAY
 //TIME COMPLEXITY : O(n) AND SPACE COMPLEXITY : O(n) => O(2n)
-// const arr = [1, 2, 1, 4, 2, 2, 4];
-// function findFrequency(arr) {
-//   const frequency = new Array(arr);
-//   result = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > 0) {
-//       if (frequency[arr[i]]) {
-//         frequency[arr[i]]++;
-//       } else {
-//         frequency[arr[i]] = 1;
-//       }
-//     }
-//     result.push([i, frequency[arr[i]]]);
-//   }
-//   return result;
-// }
-// console.log(findFrequency(arr));
+const arr = [1, 2, 1, 4, 2, 2, 4];
+function findFrequency(arr) {
+  const frequency = new Array(arr);
+  result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      if (frequency[arr[i]]) {
+        frequency[arr[i]]++;
+      } else {
+        frequency[arr[i]] = 1;
+      }
+    }
+    result.push([i, frequency[arr[i]]]);
+  }
+  return result;
+}
+console.log(findFrequency(arr));
 
 //scope
 // x = 10; //global scope
@@ -156,14 +156,14 @@
 
 //assignment : print all subarrays
 //print sum of all subarrays
-const arr = [1, 2, 3, 4];
-for (let i = 0; i < arr.length; i++) {
-  let result = "";
-  for (let j = i; j < arr.length; j++) {
-    result += arr[j];
-    console.log([result.trim()]);
-  }
-}
+// const arr = [1, 2, 3, 4];
+// for (let i = 0; i < arr.length; i++) {
+//   let result = "";
+//   for (let j = i; j < arr.length; j++) {
+//     result += arr[j];
+//     console.log([result.trim()]);
+//   }
+// }
 
 // for (let i = 0; i < arr.length; i++) {
 //   for (let j = i + 1; j <= arr.length; j++) {
