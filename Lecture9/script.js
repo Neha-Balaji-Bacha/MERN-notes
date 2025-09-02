@@ -24,7 +24,7 @@ console.log(typeof str); //object
 console.log(typeof str[0]); //string
 
 str = `abc`;
-console.log(typeof str);
+console.log(typeof str); //string
 
 str = "hi I'm neha";
 console.log(str);
@@ -43,7 +43,7 @@ personName = "nikita"; //not valid
 console.log(str);
 
 //some methods in string
-//includes function --> retirns if given string present in str or not
+//includes function --> returns if given string present in str or not
 str = "we're going to see some methods of strings";
 console.log(str.includes("going"));
 
@@ -57,7 +57,7 @@ console.log(str); //does not change original str
 
 //trim () --> removes all leading and trailling spaces
 console.log(str);
-console.log(str.trim()); //modify original string
+console.log(str.trim()); //trim() does not change the original string.
 
 //substring()--> gives substring --> doesn't changes the original array
 console.log(str.substring(3, 9)); //gives substring starting from 3 AND ENDING AT 8 (9-1)
@@ -68,6 +68,7 @@ console.log(str.substring(-3, -10)); //gives empty string --> (0,0)
 console.log(str.substring(-3, 1000)); //behaves as   (0,n)
 
 //slice() --> almost same as substring, but changes (-)ves differently
+//never modifies the original string
 console.log(str.slice(3)); //(3,n)
 console.log(str.slice(3, 5)); //gives elements from index = 3 to 4
 console.log(str.slice(-3)); //gives last 3 elements

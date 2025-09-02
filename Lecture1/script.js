@@ -35,6 +35,13 @@
 // result("Rahul","website");
 // result("Rani"); //undefined
 
+//2. Function Hoisting
+// greetUser("Neha");  // works even before declaration!
+
+// function greetUser(name) {
+//   console.log("Hello " + name);
+// }
+
 //NaN
 // function sum(a,b){
 //     console.log(a+b);
