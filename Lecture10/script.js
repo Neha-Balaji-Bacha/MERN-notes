@@ -22,6 +22,30 @@ function snakeCase(Name) {
 }
 console.log(snakeCase("student first name"));
 
+//method 2
+const caseObject = {
+  //camelCase - studentFirstName
+  camelCase: function (str) {
+    let ccase = "";
+    str.trim();
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === " ") {
+        ccase += str[i + 1].toUpperCase();
+        i++;
+      } else ccase += str[i];
+    }
+
+    return ccase;
+  },
+  //snake_case: student_first_name
+  snakeCase: function (str) {
+    return str.trim().replaceAll(" ", "_");
+  },
+};
+const str = "student first name";
+console.log("camelCase of '" + str + "' is: ", caseObject.camelCase(str));
+console.log("snake_case of '" + str + "' is: ", caseObject.snakeCase(str));
+
 //Reverse string
 function reverse(str) {
   let result = "";
@@ -51,6 +75,7 @@ palindrome("hello");
 
 //no of words in string
 function words(str) {
+  str = str.trim();
   let count = 1;
   for (let i = 0; i < str.length; i++) {
     if (str[i] == " ") {
@@ -63,6 +88,7 @@ words("my name is neha");
 
 //longest word in string
 function longest(str) {
+  str = str.trim();
   let words = str.split(" ");
   let word = "";
   for (let i = 0; i < words.length; i++) {
@@ -92,3 +118,30 @@ function nonRepaeting(str) {
   }
 }
 console.log(nonRepaeting("abacd"));
+//method 2
+function firstNonRepeatingCharacter(str) {
+  str = str.trim();
+
+  let n = str.length;
+
+  for (let character of str) {
+    if (str.indexOf(character) === str.lastIndexOf(character)) return character;
+  }
+
+  return "No repeating character";
+}
+
+//HW : Reverse each word of a string
+function reverseString(str) {
+  let input = str.split(" ");
+  let result = "";
+  for (let j = 0; j < input.length; j++) {
+    let ans = "";
+    for (let i = input[j].length - 1; i >= 0; i--) {
+      ans += input[j][i];
+    }
+    result += ans + " ";
+  }
+  console.log(result.trim());
+}
+reverseString("I am happy");

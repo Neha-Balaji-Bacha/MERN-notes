@@ -1,9 +1,11 @@
-function reverse(str) {
-  let result = "";
-  let n = str.length;
-  for (let i = n - 1; i >= 0; i++) {
-    result += str[i];
+function numberTriangle(n) {
+  console.log("1");
+  for (let i = 1; i < n; i++) {
+    let row = "";
+    for (let j = i; j < i+i+1; j++) {
+      row += j;
+    }
+    console.log(row);
   }
-  console.log(result);
 }
-reverse("hello");
+numberTriangle(5);
