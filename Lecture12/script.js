@@ -176,12 +176,12 @@ console.log(arr2);
 //create an array 1 to 100 search 57 and print
 TC: O(N);
 sc: O(N);
-let arr = [];
+let arr3 = [];
 for (let i = 0; i < 100; i++) {
-  arr.push(i + 1);
+  arr3.push(i + 1);
 }
 for (let i = 0; i < 100; i++) {
-  if (arr[i] == 57) {
+  if (arr3[i] == 57) {
     console.log(i);
     break;
   }
