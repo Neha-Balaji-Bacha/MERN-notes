@@ -42,5 +42,3 @@ console.log(counter1()); // 2
 const counter2 = createCounter();
 console.log(counter2()); // 1  (new independent closure)
 console.log(counter2()); // 2
-
-//some more examples

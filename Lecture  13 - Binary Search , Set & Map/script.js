@@ -143,6 +143,7 @@ let array = [2, 3, 4, 1, 0, 1, 2, 3, 4, 5, 10];
 let set1 = new Set(array);
 let arr1 = [...set1];
 let arr2 = Array.from(set1);
+
 let set2 = new Set([...array]);
 let arr3 = [...set2];
 console.log({ array, arr1, arr2, arr3 });
@@ -151,6 +152,9 @@ console.log({ array, arr1, arr2, arr3 });
 // -contains key-value pairs
 // -ket must be different across all pairs
 // -key can be anything
+
+// Map accepts a 2D array ([[key,value], [key,value]]) for initialization.
+// Internally, it’s stored as a hash table, not as a simple 2D array.
 
 let map = new Map([
   ["name3", "sultan"],
@@ -177,7 +181,7 @@ for (let i of map) {
   console.log("key: " + i[0], ",value: " + i[1]);
 }
 
-console.log("peinting keys");
+console.log("printing keys");
 for (let i of map.keys()) {
   console.log(i);
 }

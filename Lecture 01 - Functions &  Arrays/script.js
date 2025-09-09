@@ -88,12 +88,38 @@
 //     }
 //}
 
+//Return index and value (i gives o/p in string)
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // for(let i in students){
 //     if(i%2 === 0){
 //         console.log(Number(i)+1,students[i]);
 //     }
 // }
+
+//only returns values
+// const marks = [1,2,4,8,9,7];
+// for(let i of marks){
+//     if(i%2 === 0){
+//         console.log(i);
+//     }
+// }
+
+//forEach → can’t break and continue
+// arr = [1,2,3,9,8];
+// arr.forEach(v => {
+//   if (v === 2) {
+//     break; //Error: Illegal break statement
+//   }
+//   console.log(v);
+// });
+
+
+// [1, 2, 3].forEach(v => {
+//   if (v === 2) return; // just skips this iteration
+//   console.log(v);
+// });
+
+
 
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // students[0]=5
