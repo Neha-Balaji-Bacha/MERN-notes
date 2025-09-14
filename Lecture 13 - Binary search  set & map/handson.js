@@ -140,7 +140,6 @@ console.log(newMap.get(objKey)); // Special value
 // new Set(1, 2, 3);    // Invalid
 // new Set([1, 2, 3]);  //Valid
 
-
 // let mySet = new Set([1, 2, 2, 3, 4, 5]);
 let arr8 = [9, 7, 1, 2];
 let mySet = new Set(arr8);
@@ -196,3 +195,32 @@ console.log("Union:", union);
 // Intersection
 let intersection = new Set([...setA].filter((x) => setB.has(x)));
 console.log("Intersection:", intersection);
+
+// Lower Bound
+// Definition: The lower bound of a value x in a sorted array is the first index where the element is greater than or equal to x.
+let arr6 = [1, 2, 4, 4, 5, 7];
+let x1 = 4;
+// Lower bound of 4 is index 2 (first 4)
+
+// Upper Bound
+// Definition: The upper bound of a value x in a sorted array is the first index where the element is strictly greater than x
+let arr7 = [1, 2, 4, 4, 5, 7];
+let x = 4;
+// Upper bound of 4 is index 4 (element = 5, first greater than 4)
+
+function upperbound(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+  let index = arr.length;
+  while (low <= high) {
+    let mid = Math.floor(low + (high - low) / 2);
+    if (arr[mid] > target) {
+      index = mid;
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return index;
+}
+console.log(upperbound([1, 2, 6, 6, 11, 11, 11, 15], 6));

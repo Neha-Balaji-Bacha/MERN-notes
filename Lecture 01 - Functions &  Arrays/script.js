@@ -113,13 +113,10 @@
 //   console.log(v);
 // });
 
-
 // [1, 2, 3].forEach(v => {
 //   if (v === 2) return; // just skips this iteration
 //   console.log(v);
 // });
-
-
 
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // students[0]=5
