@@ -176,8 +176,8 @@ for (let val of mySet) {
 }
 
 // Convert Set -> Array
-let arr = [...mySet];
-console.log("Array from Set:", arr);
+let arr1 = [...mySet];
+console.log("Array from Set:", arr1);
 
 // Remove duplicates from an array
 let numbers = [1, 2, 2, 3, 4, 4, 5];

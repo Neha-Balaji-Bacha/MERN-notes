@@ -58,12 +58,12 @@ Question: Write a function to find the sum of all subarrays
  */
 // SC: O(1);
 
-const arr = [1, 2, 3, 4];
+const arr1 = [1, 2, 3, 4];
 let result = 0;
-for (let i = 0; i < arr.length; i++) {
+for (let i = 0; i < arr1.length; i++) {
   sum = 0;
-  for (let j = i; j < arr.length; j++) {
-    sum += arr[j];
+  for (let j = i; j < arr1.length; j++) {
+    sum += arr1[j];
     result += sum;
   }
 }

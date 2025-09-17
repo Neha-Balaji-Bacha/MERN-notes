@@ -53,10 +53,10 @@ prefix = [3, 8, 9, 13, 18, 26]
 */
 const arr = [3, 5, 1, 4, 5, 8]; //n
 const pref = []; //1
-pref[0] = arr[0]; //1
-for (let i = 1; i < arr.length; i++) {
+pref[0] = arr1[0]; //1
+for (let i = 1; i < arr1.length; i++) {
   //n -> arr.length
-  pref[i] = pref[i - 1] + arr[i];
+  pref[i] = pref[i - 1] + arr1[i];
 }
 console.log(pref); //1
 

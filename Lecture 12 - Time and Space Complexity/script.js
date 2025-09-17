@@ -223,5 +223,5 @@ function binarySearch(arr, target) {
   }
   return -1; // not found
 }
-let arr = [2, 4, 6, 8, 10, 12, 14];
-console.log(binarySearch(arr, 10)); // Output: 4
+let arr1 = [2, 4, 6, 8, 10, 12, 14];
+console.log(binarySearch(arr1, 10)); // Output: 4

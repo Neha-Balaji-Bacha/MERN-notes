@@ -107,9 +107,9 @@ for (let val of obj) {
   console.log(val);
 } //TypeError: obj is not iterable
 
-const arr = ["Neha", 23, "Pune"];
+const arr1 = ["Neha", 23, "Pune"];
 console.log("for...of on array");
-for (let val of arr) {
+for (let val of arr1) {
   console.log(val);
 }
 // Neha

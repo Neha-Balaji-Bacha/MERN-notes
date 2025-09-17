@@ -1,6 +1,6 @@
 const arr = [NaN];
-console.log(arr.includes(NaN)); // true
-console.log(arr.indexOf(NaN)); // -1
+console.log(arr1.includes(NaN)); // true
+console.log(arr1.indexOf(NaN)); // -1
 
 const [x, y = 10] = [5];
 console.log(x, y); // 5 10

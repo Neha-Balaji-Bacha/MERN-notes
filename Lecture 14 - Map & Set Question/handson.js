@@ -14,8 +14,8 @@ function sumArray(arr, n) {
   return arr[n - 1] + sumArray(arr, n - 1);
 }
 
-let arr = [1, 2, 3, 4];
-console.log(sumArray(arr, arr.length));
+let arr1 = [1, 2, 3, 4];
+console.log(sumArray(arr1, arr1.length));
 
 //find max ele in array
 function maxArray(arr, n) {

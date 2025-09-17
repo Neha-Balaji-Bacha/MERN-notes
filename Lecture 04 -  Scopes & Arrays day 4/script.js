@@ -4,7 +4,7 @@
 
 //YESTERDAY GIVEN TASK : TO FIND THE FREQUENCY OF ELEMENTS IN AN ARRAY
 //TIME COMPLEXITY : O(n) AND SPACE COMPLEXITY : O(n) => O(2n)
-const arr = [1, 2, 1, 4, 2, 2, 4];
+const arr1 = [1, 2, 1, 4, 2, 2, 4];
 function findFrequency(arr) {
   const frequency = new Array(arr);
   result = [];
@@ -20,7 +20,7 @@ function findFrequency(arr) {
   }
   return result;
 }
-console.log(findFrequency(arr));
+console.log(findFrequency(arr1));
 
 //scope
 // x = 10; //global scope

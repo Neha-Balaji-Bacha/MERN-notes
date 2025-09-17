@@ -1,5 +1,5 @@
 //Absolute sum difference
-const arr = [1, 1, 2, 3, 4, 8, 8];
+const arr1 = [1, 1, 2, 3, 4, 8, 8];
 function difference(arr) {
   let max = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -14,7 +14,7 @@ function difference(arr) {
   }
   console.log(max);
 }
-difference(arr);
+difference(arr1);
 
 //check prime or not
 //TC : O(sqrt(N)) SC: O(1) or constant
@@ -38,11 +38,11 @@ console.log(primeornot(7));
 // 3456
 // 45678
 function numberTriangle(n) {
-  console.log("1");
+  console.log("A");
   for (let i = 1; i < n; i++) {
     let row = "";
     for (let j = i; j < i + i + 1; j++) {
-      row += j;
+      row += String.fromCharCode(j);
     }
     console.log(row);
   }

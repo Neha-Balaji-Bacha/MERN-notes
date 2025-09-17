@@ -1,17 +1,11 @@
-let string = {
-  countVowels: function (str) {
-    let vowels = "aeiouAEIOU";
-    let count = 0;
-
-    let i = 0;
-    while (i < str.length) {
-      if (vowels.includes(str[i])) {
-        count++;
-      }
-      i++;
+function numberTriangle(n) {
+  console.log("A");
+  for (let i = 1; i < n; i++) {
+    let row = "";
+    for (let j = i; j < i + i + 1; j++) {
+      row += String.fromCharCode(j);
     }
-
-    return count;
-  },
-};
-console.log(string.countVowels("Neha Bacha"));
+    console.log(row);
+  }
+}
+numberTriangle(5);

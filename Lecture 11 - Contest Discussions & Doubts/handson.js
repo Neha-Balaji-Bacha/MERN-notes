@@ -1,8 +1,8 @@
-let arr = ["123", "45432"];
+let arr1 = ["123", "45432"];
 
-console.log(arr.length); // 2   (2 elements in the array)
-console.log(arr[0].length); // 3   ("123" has 3 characters)
-console.log(arr[1].length); // 5   ("45432" has 5 characters)
+console.log(arr1.length); // 2   (2 elements in the array)
+console.log(arr1[0].length); // 3   ("123" has 3 characters)
+console.log(arr1[1].length); // 5   ("45432" has 5 characters)
 
 let nums = [123, 45432];
 

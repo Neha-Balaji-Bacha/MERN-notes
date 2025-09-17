@@ -7,7 +7,6 @@
 // teams[place] = "LSG";
 // console.log(teams);
 
-
 //const teams = ["CSK","RCB","SRH","KKR","GT"];
 //indexof function
 // teams.pop();
@@ -27,11 +26,10 @@
 // }
 // console.log(teams);
 
-//concat function 
+//concat function
 // const otherTeams1 = ["LSG","RR","MI"];
 // const otherTeams2 = ["LSG1","RR1","MI1"];
 // console.log(teams.concat(otherTeams1,otherTeams2));
-
 
 //Task ncr
 // let num = 5
@@ -40,7 +38,6 @@
 //   fact = fact*i;
 // }
 // console.log(fact);
-
 
 // function factorial(num){
 //     let fact = 1;
@@ -60,7 +57,6 @@
 // }
 // console.log(finalarr);
 
-
 //avg till 6 decimal
 
 // function average(arr) {
@@ -69,13 +65,11 @@
 //         sum += arr[i];
 //     }
 //     let avg = sum / arr.length;
-//     return avg.toFixed(6); 
+//     return avg.toFixed(6);
 // }
 
 // let arr = [4, 8, 3, 5];
 // console.log(average(arr));
-
-
 
 //Class Notes
 
@@ -108,7 +102,7 @@ it creates "empty" spaces for all the elements
 and they're not undefined, but EMPTY 
 */
 const arr = new Array(10);
-console.log(arr);
+console.log(arr1);
 
 const arr2 = new Array("10");
 console.log(arr2);
@@ -258,4 +252,3 @@ function printArr(arr) {
 
 const numbers = new Array(4, 10, 6, 8);
 printArr(nCrOfAnArray(numbers)); // equivalent to console.log(nCrOfAnArray(numbers));
-

@@ -1,8 +1,8 @@
 console.log(+"23.50" + 12); //35.5
-const arr = [1, 2, 3];
-arr[5] = 10;
-console.log(arr.length); // 6
-console.log(arr); // [ 1, 2, 3, <2 empty items>, 10 ]
+const arr1 = [1, 2, 3];
+arr1[5] = 10;
+console.log(arr1.length); // 6
+console.log(arr1); // [ 1, 2, 3, <2 empty items>, 10 ]
 
 //toFixed() method returns a string representing the number with a specified number of digits after the decimal point.
 const num = 23.5;

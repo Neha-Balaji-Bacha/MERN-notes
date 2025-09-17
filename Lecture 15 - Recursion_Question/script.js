@@ -1,7 +1,30 @@
+//==========================Recursion==================
+
+//Recursion : A function calls itself called as recursion.
+//Try to break it into smaller problems
+
+//when we used : We use recursion when we already know the answer of a smaller version of the problem, and we can build the big answer using that.
+
+//Need : Easy to use recursion because it allows us to solve big problems by breaking them into smaller, easier versions of the same problem.
+
+// Note:
+// Recursion is powerful but uses extra memory at every (call stack).
+// If performance is critical, sometimes iteration (loops) is better.
+
+//What happens if recursion has no base case?
+// Every recursion must have a base case (stopping point).
+// Without it → infinite recursion → stack overflow error.
+
+//Call Stack :  keeps track of function calls (LIFO).
+//Base case :  Boss
+//function call itself : worker
+
+// What is Tail Recursion?
+// A tail recursive function is a recursive function where the recursive call is the last thing executed in the function.
 //write a recursive function to find the sum of first n natural no
 function sum(n) {
-  if (n <= 0) return 0;
-  return n + sum(n - 1);
+  if (n <= 0) return 0; //Base case
+  return n + sum(n - 1); //function call itself
 }
 console.log(sum(5));
 
@@ -34,7 +57,7 @@ console.log(GCD1(15, 25));
 //Recursion
 function GCD2(a, b) {
   if (a == 0) return b;
-  return GCD2(b % a, a);
+  return GCD2(b % a, a); //tail recursion
 }
 console.log(GCD2(15, 25));
 

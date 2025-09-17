@@ -1,5 +1,5 @@
 // //calculate max sum among all subarrays
-const arr = [-1, 5, -3, 2, -1, 3];
+const arr1 = [-1, 5, -3, 2, -1, 3];
 function maxSubarraysum(arr) {
   let n = arr.length;
   let max = -Infinity;
@@ -18,7 +18,7 @@ function maxSubarraysum(arr) {
   }
   console.log("max subarray sum from", startIndex, "to", endIndex, "is", max);
 }
-maxSubarraysum(arr);
+maxSubarraysum(arr1);
 
 //count all subarrays  whose sum is equal to 0
 //sc : O(1),tc:O(n*n)
