@@ -1,13 +1,14 @@
-function Bubble(arr){
- for (let i = 0; i < arr.length; i++) {
-    for (let j = i+1; j < arr.length-i-1; j++) {
-      if (arr[i] > arr[j]) {
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-      }
+let fre = new Array(256);
+let fre1 = new Array(256);
+function sortno(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if(fre[arr[i]] > 0){
+      fre[i]++;
+    }
+    if(fre1[arr[i]]<0){
+      fre1[i]++;
     }
   }
-  return arr;
+  return fre+fre1;
 }
-console.log(Bubble([4, 1, 3, 5, 7]));
+console.log(sortno([4, 1, 3, 5, 7]));

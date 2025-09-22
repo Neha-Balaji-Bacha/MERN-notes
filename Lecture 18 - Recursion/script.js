@@ -16,7 +16,7 @@ function parenthesis(str) {
   if (open != 0) return false;
   return true;
 }
-console.log(parenthesis("()()(())()"));
+console.log(parenthesis("()()(())())"));
 
 //using recursion
 let result = [];
