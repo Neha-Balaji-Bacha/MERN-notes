@@ -80,39 +80,3 @@ function permutations(str, ind = 0) {
 permutations("abc");
 console.log({ strPermutations });
 
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-class Solution {
-  // Swap characters i and j in a string
-  swapStr(str, i, j) {
-    let arr = str.split("");
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-    return arr.join("");
-  }
-  solve(input) {
-    const str = input.trim();
-    let strPermutations = [];
-    const permutations = (s, ind = 0) => {
-      if (ind === s.length - 1) {
-        strPermutations.push(s);
-        return;
-      }
-      for (let i = ind; i < s.length; i++) {
-        let swappedStr = this.swapStr(s, ind, i);
-        permutations(swappedStr, ind + 1);
-      }
-    };
-    permutations(str);
-    // Remove duplicates and sort lexicographically
-    const uniqueSorted = Array.from(new Set(strPermutations)).sort();
-    uniqueSorted.forEach((p) => console.log(p));
-  }
-}
-rl.on("line", (input) => {
-  const solution = new Solution();
-  solution.solve(input);
-  rl.close();
-});

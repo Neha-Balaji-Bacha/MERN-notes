@@ -35,3 +35,18 @@ function frequencySort(arr) {
 }
 let arr = [5, -2, 4, 2, -2, 8, -5, 0];
 console.log(frequencySort(arr));
+
+//FIBONACCI (CONTEST)
+function isFibonacci(n) {
+  function helper(a, b) {
+    if (a === n || b === n) return true;
+    if (b > n) return false;
+    return helper(b, a + b);
+  }
+  return helper(0, 1);
+}
+console.log(isFibonacci(13)); // true
+console.log(isFibonacci(14)); // false
+
+// Bubble Sort : keeps swapping adjacent elements until large ones  to the end SO On (many swaps).
+// Selection Sort : directly finds the minimum and swaps only once per pass (fewer swaps, but more comparisons).
