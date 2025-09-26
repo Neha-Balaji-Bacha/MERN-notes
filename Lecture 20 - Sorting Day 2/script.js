@@ -1,4 +1,4 @@
-//Merge sort
+//Merge sort : sub Question
 //Given two sorted arrays A & B merge both of them.
 //A : [1,3,4,7,10]
 //B  : [2,9,12]
@@ -66,7 +66,7 @@
 // let arr4 = [2, 9, 12];
 // console.log(sortArray(arr3,arr4));
 
-//merge sort : TC : O(n log n)
+//merge sort : In all case TC : O(n log n) - Main ques
 //sc : O(N)
 function sortArray(arr1, arr2) {
   let result = [];
@@ -110,8 +110,8 @@ function merge(arr, low, high) {
 let arr = [3, 9, 5, 2, 19, 4, 7];
 console.log(merge(arr, 0, arr.length - 1).join(", "));
 
-//Insertion sort
-//add no in the array
+//Insertion sort : sub Question
+//add no in the array sub question
 //following code works only some cases
 function insertion(arr, val) {
   let result = [];
@@ -145,6 +145,8 @@ function insertion(arr, val) {
 }
 console.log(insertion([1, 2, 7, 9], 6));
 
+//Insertion sort : Main ,
+// Best case : O(N), TC : O(N*N) SC : O(1)
 function insertion(arr) {
   let ind = 0;
   for (let i = 1; i < arr.length; i++) {
