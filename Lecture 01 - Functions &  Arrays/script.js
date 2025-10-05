@@ -97,12 +97,12 @@
 // }
 
 //only returns values
-// const marks = [1,2,4,8,9,7];
-// for(let i of marks){
-//     if(i%2 === 0){
-//         console.log(i);
-//     }
-// }
+const marks = [1, 2, 4, 8, 9, 7];
+for (let i of marks) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
 
 //forEach → can’t break and continue
 // arr = [1,2,3,9,8];

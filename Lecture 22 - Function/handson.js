@@ -1,3 +1,60 @@
+let arr = [1, 2, 3, 4, 5];
+let out = arr.map((x) => x * 2).filter((x) => x > 5);
+console.log(arr); //Does not modify origional array
+console.log(out);
+
+//1.squares of even numbers
+let arr1 = [1, 2, 3, 4, 5, 6];
+let ans = arr1
+  .filter((x) => !(x % 2))
+  .map((x) => {
+    return x ** 2;
+  });
+console.log(ans);
+
+//2. Filter names starting with 'A' and uppercase
+let names = ["Alice", "Bob", "Andrew", "John"];
+let result = names
+  .filter((name) => name.startsWith("A"))
+  .map((name) => {
+    return name.toUpperCase();
+  });
+console.log(result);
+
+function add(a, b) {
+  return a + b;
+}
+console.log(add(2)); // 2 + undefined = NaN
+
+//Functions are objects, so you can assign properties to them.
+function greet() {}
+greet.language = "JS";
+console.log(greet.language); // JS
+
+//nested fun
+function outer(x) {
+  return function inner(y) {
+    return function innermost(z) {
+      return x + y + z;
+    };
+  };
+}
+console.log(outer(1)(2)(3));
+
+//Return function from function
+function multiply(a) {
+  return function (b) {
+    return a * b;
+  };
+}
+console.log(multiply(5)(4));
+
+//Function inside ternary operator
+const func = (x) => (!(x % 2) ? "Yes" : "No");
+console.log(func(4));
+
+/* Practice Question */
+/* Cricket Team */
 const team = {
   name: "Indian Cricket Team",
   /* this will store an object with two properties -> {id: 1, scores: [10, 34, 80]} */
