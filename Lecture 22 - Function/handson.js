@@ -125,3 +125,15 @@ console.log("average score of player 1 - " + team.averageScore(1)); // => 153/4 
 console.log("average score of player 2 - " + team.averageScore(2)); // => 260/3 = 86.67
 
 console.log("average score of team - " + team.teamAverage()); // => 513/9 = 57
+
+
+const nums = [1, 2, 3, 4, 5];
+
+// map → transform each element
+console.log(nums.map((n) => n * 2)); // [2, 4, 6, 8, 10]
+
+// filter → keep some elements
+console.log(nums.filter((n) => n % 2 === 0)); // [2, 4]
+
+// reduce → accumulate into single value
+console.log(nums.reduce((sum, n) => sum + n, 0)); // 15

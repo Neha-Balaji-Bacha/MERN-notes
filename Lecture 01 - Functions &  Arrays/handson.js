@@ -1,14 +1,3 @@
-const nums = [1, 2, 3, 4, 5];
-
-// map → transform each element
-console.log(nums.map((n) => n * 2)); // [2, 4, 6, 8, 10]
-
-// filter → keep some elements
-console.log(nums.filter((n) => n % 2 === 0)); // [2, 4]
-
-// reduce → accumulate into single value
-console.log(nums.reduce((sum, n) => sum + n, 0)); // 15
-
 //========closure=======
 //A closure is created when a function “remembers” the variables from its outer scope even after the outer function has finished execution.
 
