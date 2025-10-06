@@ -1,14 +1,9 @@
-function calculator(a,b,operation){
-    return operation(a,b);
+try{
+    let a=10;
+    let b=20;
+    if(b==0) throw "can not divide by zero!"
+    console.log(a/b);
 }
-function add(a,b){
-    return a+b;
+catch(error){
+  console.log("Error");
 }
-function multiply(a,b){
-    return a*b;
-}
-function sub(a,b){
-    return a-b;
-}
-let sum1 = calculator(3,4,add);
-console.log({sum1});
