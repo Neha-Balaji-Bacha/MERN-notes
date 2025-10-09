@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+        <h1><strong>Application for Security Guard🪪🥷</strong></h1>
+    </header>
+    <form novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="enter your full name"
+          required
+          autocomplete="name"
+        />
+      </div>
+    </br>
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="enter your email"
+          required
+          autocomplete="email"
+        />
+      </div>
+     </br>
+      <div>
+        <label for="phone">phone number</label>
+        <input
+          id="phone"
+          type="number"
+          placeholder="enter without country code"
+          required
+          autocomplete="phone"
+        />
+      </div>
+    </br>
+       <div>
+        <label for="location">Location</label>
+        <select name="location" id="location">
+          <option value="">Select a location</option>
+          <option>Baner</option>
+          <option>Viman Ngar</option>
+          <option>Hadpsar</option>
+          <option>Hinjewadi</option>
+        </select>
+      </div>
+     </br>
+      <div>
+        <label for="resume">Resume</label>
+        <input id="resume" name="resume" type="file" />
+      </div>
+       </br>
+        <div>
+        <label for="salary">Expected salary</label>
+        <input
+          id="salary"
+          type="text"
+          placeholder="enter your Expected salary"
+          required
+          autocomplete="salary"
+        />
+      </div>
+    </br>
+     <div>
+        <label for="current ctc">Current ctc</label>
+        <input
+          id="current ctc"
+          type="text"
+          placeholder="enter your current salary"
+          required
+          autocomplete="current ctc"
+        />
+      </div>
+    </br>
+        <div>
+        <label for="pre experience">Experience</label>
+        <input
+          id="pre experience"
+          type="checkbox"
+          placeholder="enter your experience with certificate"
+          required
+          autocomplete="pre experience"
+        />
+      </div>
+    </br>
+    <div>
+        <label for="shift">Shift</label>
+        <input id="shift" name="shift" type="radio"/>Morning shift
+        <input id="shift" name="shift" type="radio"/>Night shift
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
