@@ -1,0 +1,77 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align Self Example</title>
+    <style>
+      .container {
+        display: flex;
+        background-color: lightgray;
+        height: 200px;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .box {
+        background-color: skyblue;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .box2 {
+        align-self: flex-start;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box box2">Box 2 (align-self: flex-start)</div>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align Content Example</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+        background-color: lightgray;
+
+        align-content: flex-end;
+        gap: 10px;
+      }
+
+      .box {
+        width: 80px;
+        height: 50px;
+        background-color: skyblue;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+    </div>
+  </body>
+</html>

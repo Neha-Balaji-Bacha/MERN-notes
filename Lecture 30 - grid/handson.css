@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;   /* vertically center all cards */
+  gap: 20px;
+  padding: 20px 0;
+  background-color: white;
+}
+
+/* First card */
+.card1 {
+  display: flex;
+  flex-direction: column; 
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: white;
+  max-width: 300px;
+  padding: 10px;
+}
+
+/* Second card */
+.card2 {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start; /* ⬅ moves only this card to top of the flex container */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: white;
+  max-width: 300px;
+  padding: 10px;
+}

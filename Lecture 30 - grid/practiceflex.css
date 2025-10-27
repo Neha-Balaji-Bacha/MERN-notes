@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.yellow {
+  background-color: yellow;
+  flex: 0 0 100px; 
+}
+
+.middle {
+  display: flex;
+  flex: 1; 
+}
+
+.green {
+  background-color: green;
+  flex: 0 0 25%; 
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
+}
+
+.pink {
+  background-color: pink;
+  flex: 1; 
+}
+
+.red {
+  background-color: red;
+  flex: 0 0 100px;
+}
