@@ -1,0 +1,54 @@
+>>> Inline inside Block
+ -Allowed
+ -This is normal and correct. Example: <p><a href="#">Click me</a></p>
+
+ >>> Block inside Inline
+Not recommended / invalid  allows it but semantically wrong
+Example: <a><div>text</div></a> — it might work, but browser auto-fixes it internally.
+
+>>> novalidate : the browser skips all these checks — it sends the form without any validation.
+
+
+>>> required autocomplete
+The required attribute is used to make a form field mandatory.
+If a user tries to submit the form without filling this field, 
+the browser will prevent submission and show a warning.
+user must fill this before submission (if novalidate is not present).
+
+>>> What happens if you put a <form> inside another <form>?
+Not allowed — HTML doesn’t support nested forms.
+Browsers will close the first <form> before starting the second.
+- Form Elements: input, select, button
+- Form Attributes: required, autocomplete, placeholder
+>>> <form>
+  <label>Username:</label>
+  <input type="text" name="username" required autocomplete="on">
+
+  <label>Email:</label>
+  <input type="email" name="email" required autocomplete="off">
+
+  <button type="submit">Submit</button>
+</form>
+
+-Username → mandatory, browser can suggest previous entries.
+
+-Email → mandatory, browser will not suggest anything.
+
+>>> placeholder
+
+The placeholder attribute shows temporary text inside an input field.
+
+It gives a hint to the user about what to enter.
+
+The text disappears when the user starts typing.
+
+>>> custom data attribute : Custom data attributes are better than 
+using id or class because they store extra information without affecting 
+styling or element identity, while id must be unique and class is mainly for CSS styling.
+used to store extra information on HTML elements
+
+>>> Table
+colspan → stretches horizontally
+rowspan → stretches vertically
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- link name is Hiii..Neha -->
+    <a href="https://youtube.com/shorts/2J1gdo90XcA?si=jduNqjN72TCMDjOV"
+      ><h1>Hiii..Neha</h1></a
+    >
+    <!-- Avoid wrapping <h1> inside <a> or <span> unless necessary.because span is inline ele and h1 is block ele -->
+    <span><h1>Hii..!!</h1></span>
+
+    <!-- Your second <a> tag was empty.
+Empty links are not accessible. Add visible text like “Watch Video”. -->
+    <div>
+      <a href="https://youtube.com/shorts/2J1gdo90XcA?si=jduNqjN72TCMDjOV"></a>
+    </div>
+
+    <!-- Heading tags (<h1> to <h6>) cannot contain other heading tags or block elements -->
+    <!-- hi      ← big H1 heading
+    hello   ← smaller H2 heading
+    neha    ← normal text (outside headings) -->
+    <h1>
+      hi
+      <h2>hello</h2>
+      neha
+    </h1>
+
+    <!-- Learned new tag -->
+    <video src="html_foundations (1080p).mp4" alt="html_foundations" width="90">
+      HTML
+    </video>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/8F9F1VAoMmw?si=tqpGLKaTszkDGyG2"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <!-- merge coloumn -->
+    <table border="1">
+      <tr>
+        <th colspan="2">Student Info</th>
+        <th>Marks</th>
+      </tr>
+      <tr>
+        <td>Ali</td>
+        <td>Class 10</td>
+        <td>90</td>
+      </tr>
+    </table>
+
+    <!-- merge row -->
+    <table border="1">
+      <tr>
+        <th rowspan="2" colspan="2">Header</th>
+        <th>Subject</th>
+      </tr>
+      <tr>
+        <td>Math</td>
+      </tr>
+    </table>
+  </body>
+</html>

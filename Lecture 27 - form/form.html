@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form novalidate>
+      <div>
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="enter your full name"
+          required
+          autocomplete="name"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="enter your email"
+          required
+          autocomplete="email"
+        />
+      </div>
+      <div>
+        <label for="phone">phone number</label>
+        <input
+          id="phone"
+          type="number"
+          placeholder="enter without country code"
+          required
+          autocomplete="phone"
+        />
+      </div>
+      <div>
+        <label for="birth">Birth</label>
+        <input id="birth" name="birth" type="date" />
+      </div>
+      <div>
+        <label for="password">password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="atleast 6 digit"
+        />
+      </div>
+      <div>
+        <label for="country">Country</label>
+        <select name="country" id="country">
+          <option value="">Select a country</option>
+          <option>India</option>
+          <option>China</option>
+          <option>America</option>
+          <option>UK</option>
+        </select>
+      </div>
+      <div>
+        <label for="cities">Cities</label>
+        <select name="cities" id="cities" multiple size="3">
+          <option value="">Select a country</option>
+          <option>Mumabi</option>
+          <option>pune</option>
+          <option>Latur</option>
+          <option>Nashik</option>
+        </select>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- custome attributes -->
+    <div>
+      <h2>List of fruits</h2>
+      <p id="mango" data-product-id="abc" data-product-color="red">
+        Mango<span>10</span>
+      </p>
+      <p id="apple">Apple - <span>40</span></p>
+      <p id="banana">Banana - <span>30</span></p>
+    </div>
+    <script>
+      let mango = document.getElementById("mango");
+      console.log(mango.dataset.productId);
+      mango.dataset.color = "pink";
+      console.log(mango.dataset.color);
+    </script>
+  </body>
+</html>
