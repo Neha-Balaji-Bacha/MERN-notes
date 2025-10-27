@@ -1,0 +1,54 @@
+>>> :root
+- root is a CSS pseudo-class that represents the highest-level element in your HTML document, which is the <html> element.
+
+- Anything you define under :root is globally available to the entire page.
+
+- Used to store CSS variables so you can reuse them anywhere.
+
+>>> What is diplay flexbox ?
+
+- Used to store CSS variables so you can reuse them anywhere.
+- It makes easy to arrange items in a  horizontally or vertically, with proper spacing and alignment.
+- Default behavior: flex-direction: row; - items arranged in a horizontal row.
+
+- flex-direction : Direction of items-row, column
+- justify-content :  Items align left, center, or spaced evenly (main axis)
+- align-items : it controls vertical alignment for horizontal rows, or horizontal alignment for vertical columns.
+- flex-wrap : Items move to next line automatically
+- gap : Space between items
+
+
+>>>Flexbox 
+>>> display: Defines how an element behaves display: block / inline / flex;
+gap Adds space between flex items
+
+>>> .item {
+  flex: 1 1 200px; /* grow, shrink, basis */
+}
+flex-grow: 1
+Defines how much the item can grow relative to other items when there is extra space.
+flex-shrink: 1
+Defines how much the item can shrink if there’s not enough space.
+flex-basis: 200px
+Sets the initial size of the item before growing or shrinking.
+
+>>> box-shadow: offset-x offset-y blur color;
+offset-x : Horizontal distance of the shadow	
+offset-y : Vertical distance of the shadow	
+blur-radius :How soft or blurry the shadow edge is	5px (higher = more blur)
+color : Shadow color
+
+- Ex : box-shadow: 10px 0 10px gray;
+
+-Effects:
+offset-x - controls left/right
+
+Positive - right side
+
+Negative - left side
+
+offset-y - controls top/bottom
+
+Positive - bottom
+
+Negative - top
