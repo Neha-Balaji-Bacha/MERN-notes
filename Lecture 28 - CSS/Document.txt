@@ -1,0 +1,46 @@
+>>> * Universal selector: applies styles to all elements color: green;
+
+>>> h1 Element selector — targets all h1 tags color: rgb(12, 200, 255);
+
+>>> #p1 ID selector — targets element with id='p1'
+
+>>> Text Styling 
+1. color: Changes the color of text 
+
+2.font-family: Sets the font type 
+
+3.font-weight: Makes text bold or light 
+
+4.text-align: Aligns text horizontally 
+
+5.text-decoration: Adds line styles (underline, none) 
+
+6.text-transform: Changes case of letters 
+
+7.line-height: Sets vertical spacing between lines 
+
+>>> Box Model 
+1.margin Space: outside the border 
+
+2.padding Space: inside the border 
+
+3. Creates a border around element 
+
+4.width / height Defines element dimensions 
+
+5.box-sizing Includes border & padding in total size ex.box-sizing: border-box;
+
+>>>Backgrounds 
+1.background-color: Applies background color
+
+2.background-image: Adds a background image background-image: url('image.jpg');
+
+3.background-repeat: Repeats or stops background image background-repeat: no-repeat;
+
+4.background-size Controls size of background image
+
+Inline CSS -> highest priority
+
+Internal CSS -> middle priority
+
+External CSS -> lowest priority

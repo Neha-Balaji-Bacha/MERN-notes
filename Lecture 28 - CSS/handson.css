@@ -1,0 +1,36 @@
+/* Group Selector */
+h1,h2,h3{
+ font-size: large;
+ color: blue;
+}
+/* class selector */
+.highlight{
+    text-decoration: underline;
+    background-color: yellow;
+}
+#Stationary{
+ color:blueviolet;
+ line-break: auto;
+ text-transform: capitalize;
+ text-decoration: underline;
+ font-weight: bold;
+ font-size: large;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+#info {
+  color: blue;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+/* Both applied together */
+#info.highlight {
+  border: 2px solid red;
+}
+
+#info {
+  .highlight { color: red; } /* invalid in CSS */
+}

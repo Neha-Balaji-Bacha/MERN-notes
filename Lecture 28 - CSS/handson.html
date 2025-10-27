@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="handson.css" />
+
+    <style>
+      /* Learned new attributes : available in assignment */
+      body {
+        background-image: url(https://images.unsplash.com/photo-1518791841217-8f162f1e1131); /* Replace with your image */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+      }
+      /* Group Selector */
+      h1,
+      h2,
+      h3 {
+        font-size: large;
+        color: blue;
+      }
+      /* class selector */
+      .highlight {
+        text-decoration: underline;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Learned new tag -->
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h3>Lorem ipsum dolor sit amet.</h3>
+
+    <p class="highlight">This text will be highlighted in yellow.</p>
+    <p id="cell">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At, adipisci?
+    </p>
+
+    <!-- Internal Styling : works inside body but it is not good practice -->
+    <style>
+      #cell {
+        color: blue;
+      }
+    </style>
+
+    <ol id="Stationary">
+      <li>notebook</li>
+      <li>pen</li>
+      <li>book</li>
+    </ol>
+
+    <!-- Both ID and class are applied to the same element.
+    In CSS, you can style them separately or together -->
+    <p id="info" class="highlight">Hello World!</p>
+  </body>
+</html>
