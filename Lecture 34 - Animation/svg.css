@@ -1,0 +1,35 @@
+    svg {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        margin: 20px;
+      }
+
+      #myLine {
+        stroke: black;
+        stroke-width: 4;
+      }
+
+      #myRect {
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }
+
+      #myCircle {
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }
+
+      #myTriangle {
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }
+
+      #myellipse{
+        stroke: black;
+        stroke-width: 4;
+        fill: none;
+      }

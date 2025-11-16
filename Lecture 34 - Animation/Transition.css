@@ -1,0 +1,58 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  background-color: rgb(0, 255, 183);
+}
+
+/* When hovering anywhere on the page */
+body:hover .box {
+  width: 300px;
+  background-color: rgb(192, 226, 43);
+}
+
+/* Common transition setup */
+.transition {
+  transition-property: width, background-color;
+  transition-duration: 2s;
+  transition-delay: 0.5s;
+}
+
+/* Different timing functions */
+.linear {
+  transition-timing-function: linear;
+}
+
+.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.ease-out {
+  transition-timing-function: ease-out;
+}
+
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.step-start {
+  transition-timing-function: step-start;
+}
+
+.step-end {
+  transition-timing-function: step-end;
+}
+
+.steps {
+  transition-timing-function: steps(5);
+}

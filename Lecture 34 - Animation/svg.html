@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="svg.css" />
+    <title>SVG Shapes Example</title>
+  </head>
+  <body>
+    <!-- LINE -->
+    <svg>
+      <line id="myLine" x1="20" y1="100" x2="180" y2="100"></line>
+
+      <!-- <line id="myLine" x1="0" y1="0" x2="30" y2="0"></line>
+      <line id="myLine" x1="30" y1="0" x2="30" y2="30"></line>
+      <line id="myLine" x1="30" y1="30" x2="0" y2="30"></line>
+      <line id="myLine" x1="0" y1="30" x2="0" y2="0"></line> -->
+    </svg>
+
+    <!-- RECTANGLE -->
+    <svg>
+      <rect id="myRect" x="20" y="40" width="160" height="100"></rect>
+      <!-- x -> from left edge y -> from top edge -->
+      <rect
+        id="myRect"
+        x="40"
+        y="60"
+        width="100"
+        height="70"
+        rx="30"
+        ry="30"
+      ></rect>
+    </svg>
+
+    <!-- CIRCLE -->
+    <svg>
+      <circle id="myCircle" cx="100" cy=" 100" r="60"></circle>
+    </svg>
+
+    <!-- TRIANGLE -->
+    <svg>
+      <polygon id="myTriangle" points="100,20 100,180 20,180"></polygon>
+    </svg>
+
+    <!-- ELLIPSE -->
+    <svg>
+      <ellipse id="myellipse" cx="100" cy="100" rx="30" ry="50"></ellipse>
+    </svg>
+  </body>
+</html>
