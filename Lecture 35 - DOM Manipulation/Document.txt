@@ -1,0 +1,3 @@
+Comparision of className & ClassList
+Comparision of innerHTML & textContent
+New concept : innertext
