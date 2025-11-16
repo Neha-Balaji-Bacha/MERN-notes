@@ -1,0 +1,12 @@
+What is the purpose of the name attribute in a form?
+The name attribute identifies the input field when the form is submitted.
+It creates a key:value pair in form data.
+
+Why do we use event.preventDefault() in forms?
+Prevents the browser’s default behavior (refreshing the page on submit).
+
+Why do <label> and <input> use the same id and for?
+We use the same value for the input’s id and the label’s for because it links the label to that input.
+
+label use
+When you click the label, the cursor automatically goes into the input field.
