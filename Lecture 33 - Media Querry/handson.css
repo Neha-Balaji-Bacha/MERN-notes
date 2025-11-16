@@ -1,0 +1,24 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+img[alt] {
+  border: 3px solid green;
+}
+input[type="text"] {
+  background-color: lightblue;
+}
+
+a[href^="https"] {
+  color: green;
+}
+a[href$=".pdf"] {
+  color: red;
+}
+
+div[class~="active"] {
+  border: 2px solid blue;
+}
