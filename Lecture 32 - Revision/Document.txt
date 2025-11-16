@@ -1,0 +1,2 @@
+Used position property for nav bar
+Learned time html tag
