@@ -65,7 +65,6 @@ for (let student of classRoom) {
   //   if (student && student.address && student.address.city == "pune") {
   //     console.log(student.name, student.age, student.address, student.homeNo);
   //   }
-
   if (student?.address?.city === "pune") {
     console.log(student.name, student.age, student.address, student.homeNo);
   }
@@ -107,9 +106,9 @@ for (let val of obj) {
   console.log(val);
 } //TypeError: obj is not iterable
 
-const arr1 = ["Neha", 23, "Pune"];
+const arr10 = ["Neha", 23, "Pune"];
 console.log("for...of on array");
-for (let val of arr1) {
+for (let val of arr10) {
   console.log(val);
 }
 // Neha
@@ -121,19 +120,19 @@ const studentnew = {
   age: 23,
   city: "Pune",
 };
-// 🔹 Using Object.keys()
+// Using Object.keys()
 console.log("---- Keys ----");
 for (let key of Object.keys(studentnew)) {
   console.log(key); // only keys
 }
 
-// 🔹 Using Object.values()
+// Using Object.values()
 console.log("---- Values ----");
 for (let value of Object.values(studentnew)) {
   console.log(value); // only values
 }
 
-// 🔹 Using Object.entries()
+// Using Object.entries()
 console.log("---- Entries ----");
 for (let [key, value] of Object.entries(studentnew)) {
   console.log(key, value); // both key and value
@@ -163,12 +162,12 @@ for (let key in obj1) {
 //Array inside Object
 const stu = { name: "Priya", skills: ["JS", "C++", "MERN"] };
 
-// for...in → keys of object
+// for...in - keys of object
 for (let i in stu) {
   console.log("for...in (obj):", stu.skills[i]);
 }
 
-// for...of → values of skills array
+// for...of - values of skills array
 for (let skill of stu.skills) {
   console.log("for...of (skills):", skill);
 }
@@ -186,12 +185,12 @@ const classroom = [
   { name: "Rohan", city: "Mumbai" },
 ];
 
-// for...of → objects
+// for...of - objects
 for (let student of [classroom[0]]) {
   console.log("for...of:", student.name, student.city);
 }
 
-// for...in → keys inside each object
+// for...in - keys inside each object
 for (let key in classroom[0]) {
   console.log("for...in (first obj):", key, classroom[0][key]);
 }
