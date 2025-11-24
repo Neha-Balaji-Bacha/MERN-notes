@@ -189,15 +189,15 @@ for (let i = 0; i < 100; i++) {
 
 //first index and last index of 6
 //TC : o(n),sc:o(1)
-let arr1 = [1, 2, 4, 4, 6, 6, 6, 8];
-for (let i = 0; i < arr1.length; i++) {
-  if (arr1[i] == 6) {
+let arr10 = [1, 2, 4, 4, 6, 6, 6, 8];
+for (let i = 0; i < arr10.length; i++) {
+  if (arr10[i] == 6) {
     console.log(i);
     break;
   }
 }
 for (let i = arr1.length - 1; i >= 0; i--) {
-  if (arr1[i] == 6) {
+  if (arr10[i] == 6) {
     console.log(i);
     break;
   }

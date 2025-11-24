@@ -1,8 +1,8 @@
-// const value = 4 + ("34" + " ") / 17;
-// console.log(value);
+const value = 4 + ("34" + " ") / 17;
+console.log(value);
 
-// const space = " ";
-// console.log(space * 1);
+const space = " ";
+console.log(space * 1);
 
 //Given a N*N grid, find the primary diagonal sum;
 //TC:N ,SC:1
@@ -75,7 +75,7 @@
 // }
 // mat(arr);
 
-//H>W
+//HW
 //given a 2d matrix, reverse each odd coloumns and print it
 // Input :
 // [[1,2,3,4,5,6],
