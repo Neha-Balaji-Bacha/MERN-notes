@@ -77,7 +77,7 @@
 // result("Rahul ","website");
 // result("Rani "); //undefined
 
-//array : undefined
+//array 
 // const students = ["neha","nikita","nikhil","kapil","vaish","dixsha"];
 // console.log(students[4]);
 

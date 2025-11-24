@@ -43,7 +43,7 @@ function sayHi() {
 }
 
 sayHello(); // Error
-const sayHello = function () {
+const sayHello = function (){
   console.log("Hello");
 };
 
@@ -71,7 +71,7 @@ console.log(arr3[1]); // undefined
 
 //flat() inbuilt function
 let arr2 = [1, [2, 3], [4, [5]]];
-console.log(arr2.flat(2)); // [1,2,3,4,5]
+console.log(arr2.flat(2)); // [1,2,3,4,5] It removes only two level of nesting
 
 //without indexing
 let arr = [1, 2, 3, 4];
