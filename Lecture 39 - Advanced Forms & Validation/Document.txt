@@ -1,0 +1,122 @@
+All checkboxes:
+document.querySelectorAll("input[type=checkbox]")
+
+>>when checked used
+Only selected checkboxes:
+document.querySelectorAll("input[type=checkbox]:checked")
+
+| Input Type              | How to check selection | Why?                    |
+| ----------------------- | ---------------------- | ----------------------- |
+| Checkbox                |    checked             | Has ON/OFF state        |
+| Radio                   |    checked             | Only one can be ON      |
+| Select dropdown         |    selected            | Multiple items possible |
+| Text/password/date/time |    value               | Always one typed value  |
+
+
+=============FileReader============
+
+document.querySelector("[type=file]").value : provides fake path
+document.querySelector("[type=file]").files : The REAL file is stored in .files
+
+When a user selects a file, the browser provides a File object inside the input’s .files list. 
+This object contains only metadata—such as name, size, and type—not the actual file content. For security reasons, 
+JavaScript cannot access the file’s content directly, so we use the FileReader API to read the real data.
+FileReader works asynchronously, meaning it reads the file in the background without blocking other JavaScript code. 
+It can return the file data in different formats such as text, ArrayBuffer, or a Base64 DataURL. Using readAsDataURL(), 
+we can convert the file into a Base64-encoded DataURL, which allows us to display images directly in the browser without uploading the file to a server.
+A Base64 DataURL is simply a text representation of a file. When we use FileReader.readAsDataURL(), the browser converts the file’s 
+binary data into Base64 text wrapped inside a DataURL format. This is especially useful for features like image preview.
+
+FileReader also provides multiple methods depending on what we need:
+
+readAsDataURL() → for Base64 previews (commonly for images)
+
+readAsText() → for reading text-based files (TXT, JSON, CSV)
+
+readAsArrayBuffer() → for binary processing (PDFs, audio, video, raw uploads)
+
+readAsBinaryString() → deprecated, replaced by ArrayBuffer
+
+Overall, FileReader is mainly used for client-side preview or processing, not for uploading. For uploads, 
+we directly send the File object using FormData."
+
+
+======Some Events=========
+1. input event
+
+Fires every time the value of an input changes.
+
+Triggers on each keystroke, paste, delete, or modification.
+
+Best for live updates (e.g., live search).
+
+Example:
+Typing "Hello" triggers input 5 times.
+
+2. change event
+
+Fires only when the value is changed AND the input loses focus.
+
+For text inputs → fires when user types something and then clicks outside.
+
+For select dropdowns, checkboxes, and radio buttons → fires immediately when selection changes.
+
+Example:
+Typing "Hello" triggers change only once when the user clicks away.
+
+3. focus event
+Used for highlighting, Show hints (“Password must be 8 characters”).
+
+Example:
+Click in the input → focus fires.
+
+4. blur event
+
+Opposite of focus.
+
+Fires when the user leaves an input field.
+
+Used for validation, saving data, or removing highlight.
+
+Example:
+Click outside the input → blur fires.
+
+Save draft automatically when input loses focus
+
+Hide hints/help messages
+
+Short 10-second version (Interview-Ready)
+
+input: fires on every keystroke.
+
+change: fires only after value changes and input loses focus.
+
+focus: fires when input gets focus.
+
+blur: fires when input loses focus.
+
+
+
+| Event      | When It Fires       | Common Usage                     |
+| ---------- | ------------------- | -------------------------------- |
+| **input**  | Every keystroke     | live search, password strength   |
+| **change** | Final value changed | dropdown select, checkbox, radio |
+| **focus**  | User enters input   | show hints, highlight            |
+| **blur**   | User leaves input   | validation, auto-save            |
+
+==FileReader==
+When a user selects a file, the browser provides a File object inside the inputs files list. 
+This object contains only metadata—such as name, size, and type—not the actual file content. For security reasons, 
+JavaScript cannot access the file’s content directly, so we use the FileReader API to read the real data.
+Using readAsDataURL(), we can convert the file into a Base64-encoded string DataURL, which allows us to display images 
+directly in the browser without uploading the file to a server.
+A Base64 DataURL is simply a text representation of a file. 
+
+Topics 
+Input type & check
+-checkbox : checked
+-radio : checked
+-select : select
+-password,date,time : value
+
+//HW : focus,blur
