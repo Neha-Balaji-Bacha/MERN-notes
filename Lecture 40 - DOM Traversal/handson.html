@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table,th,tr,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Table Different Property</caption>
+        <thead>
+            <tr class="first">
+                <th>sr no</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+            <td>1</td>
+            <td>Neha</td>
+            <td>50</td>
+           </tr>
+            <tr>
+            <td>2</td>
+            <td>Nikita</td>
+            <td>60</td>
+           </tr>
+            <tr>
+            <td>3</td>
+            <td>Nikhil</td>
+            <td>70</td>
+           </tr>
+           <li>
+            <ul>A</ul>
+            <ul>B</ul>
+            <ul>C</ul>
+           </li>
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.getElementsByTagName("table")[0];
+        console.log(table);
+        console.log(table.rows);
+        console.log(table.tHead);
+
+        console.log(table.cells);
+        console.log(table.rows[1]);
+        console.log(table.rows[1].rowIndex);
+        console.log(table.rows[1].firstElementChild);
+        console.log(table.rows[1].lastElementChild);
+
+        console.log(table.closest(".first"));
+        console.log(table.parentElement);
+
+        console.log(table.caption);
+        console.log(table.tBodies);
+
+        //print first column
+        for(let row of table.rows){
+            console.log(row.cells[0].textContent);
+        }
+
+        //print only first three cells
+        let count=0;
+         for(let row of table.rows){
+            if(count==3) break;
+            console.log(row.cells[0].textContent);
+            count++;
+        }
+
+        //remove second row
+        table.deleteRow(1);//in console showing undefined
+    </script>
+</body>
+</html>

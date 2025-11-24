@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="great-grand-parent">
+        <div class="grand-parent">
+            <div class="parent">
+                <div class="child">child</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="parent2">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+        <div class="child4"></div>
+    </div>
+
+    <div class="card">
+        <p class="title">shoes</p>
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+    </div>
+
+<script>
+//getting the parent of an element
+const child = document.querySelector(".child");
+console.log(child.parentElement);
+
+const parent = document.querySelector(".parent");
+console.log(parent.parentElement);
+
+const grandparent = document.querySelector(".grand-parent");
+console.log(grandparent.parentElement);
+
+//body's parent = html
+console.log(document.body.parentElement);
+
+//html has no parent, so = null
+console.log(document.body.parentElement.parentElement);
+
+//closest()
+console.log(child.closest(".parent"));
+console.log(child.closest(".div"));
+
+//finding the parent of .child whose parent is <body>
+let element = child;
+while (element.parentElement !== document.body) {
+    element = element.parentElement;
+}
+element.classList.add("accio");
+console.log(element);
+
+console.log(element.tagName, element.parentElement.tagName);
+
+//childNodes & children
+const parent2 = document.querySelector(".parent2");
+console.log(parent2.childNodes);
+console.log(parent2.children);
+
+console.log(parent2.firstElementChild);
+console.log(parent2.lastElementChild);
+
+//accessing second child
+console.log(parent2.children[1]);
+
+//adding class to first child of body
+document.body.children[0].classList.add("accio");
+
+//iterating through children
+for (let child of parent2.children) {
+    console.log(child.className);
+}
+
+const secondChild = parent2.children[1];
+console.log("pre sibling: ", secondChild.previousElementSibling);
+console.log("next sibling: ", secondChild.nextElementSibling);
+
+//printing all siblings except secondChild
+console.log(
+    [...secondChild.parentElement.children].filter(
+        (child) => child !== secondChild
+    )
+);
+
+//delete card when button clicked
+const deleteBtn = document.querySelector(".delete");
+deleteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteBtn.closest(".card").remove();
+});
+</script>
+</body>
+</html>

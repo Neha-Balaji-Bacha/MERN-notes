@@ -1,0 +1,23 @@
+DOM Traversing – Complete Table
+
+| Property / Method        | Returns                                              | Includes Text Nodes | Usage                                                       |
+|--------------------------|------------------------------------------------------|----------------------|-------------------------------------------------------------|
+| parentElement            | Parent element node                                  | No                   | Go one level up, only elements                             |
+| parentNode               | Parent node (element, document, comment, etc.)       | Sometimes            | Needed when working with all node types                     |
+| children                 | HTMLCollection of child elements                     | No                   | Access only element children                               |
+| childNodes               | NodeList of all child nodes                           | Yes                  | Includes whitespace, comments, and text nodes               |
+| firstElementChild        | First child which is an element                      | No                   | Access first visible element                                |
+| firstChild               | First child node                                      | Yes                  | Can return text node due to whitespace                      |
+| lastElementChild         | Last child element                                   | No                   | Access last visible element                                 |
+| lastChild                | Last child node                                       | Yes                  | Can return whitespace                                       |
+| nextElementSibling       | Next sibling element                                 | No                   | Move horizontally between elements                          |
+| nextSibling              | Next node including text/comments                    | Yes                  | Raw traversal including text nodes                          |
+| previousElementSibling   | Previous sibling element                             | No                   | Move backward between elements                              |
+| previousSibling          | Previous node including text/comments                | Yes                  | Raw traversal                                               |
+| closest(selector)        | Nearest ancestor element matching the selector       | No                   | Search upward to find matching parent                      |
+| remove()                 | Removes element from DOM                             | No                   | Delete elements dynamically                                 |
+
+
+parentElement ,children.childNodes,firstElementChild,lastElementChild,
+nextElementSibling,previousElementSibling,closest,iterating through children,
+adding class to  child of body, accessing child,
