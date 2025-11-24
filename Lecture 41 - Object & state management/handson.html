@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Level Boxes</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            border: 2px solid #e5ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            color: #ff00d9;
+        }
+
+        .controls {
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        button {
+            margin-top: 6px;
+            display: block;
+            background: none;
+            border: 1px solid #bfff00;
+            padding: 5px 10px;
+            color: #ff00e6;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0080ffff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="boxes-wrapper"></div>
+
+<script>
+    const totalBoxes = 3;
+    const wrapper = document.getElementById("boxes-wrapper");
+    const levels = {};
+
+    for (let i = 1; i <= totalBoxes; i++) {
+        levels[i] = 0;
+
+        const boxContainer = document.createElement("div");
+        boxContainer.className = "box-container";
+
+        const box = document.createElement("div");
+        box.className = "box";
+        box.textContent = i;
+
+        const controls = document.createElement("div");
+        controls.className = "controls";
+
+        const levelDisplay = document.createElement("div");
+        levelDisplay.textContent = `Level: ${levels[i]}`;
+
+        const incBtn = document.createElement("button");
+        incBtn.textContent = "Increase Level";
+
+        const decBtn = document.createElement("button");
+        decBtn.textContent = "Decrease Level";
+
+        incBtn.addEventListener("click", () => {
+            levels[i]++;
+            levelDisplay.textContent = `Level: ${levels[i]}`;
+        });
+
+        decBtn.addEventListener("click", () => {
+            levels[i]--;
+            levelDisplay.textContent = `Level: ${levels[i]}`;
+        });
+
+        controls.appendChild(levelDisplay);
+        controls.appendChild(incBtn);
+        controls.appendChild(decBtn);
+
+        boxContainer.appendChild(box);
+        boxContainer.appendChild(controls);
+        wrapper.appendChild(boxContainer);
+    }
+
+</script>
+
+</body>
+</html>

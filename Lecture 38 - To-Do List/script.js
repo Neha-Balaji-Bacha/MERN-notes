@@ -1,12 +1,20 @@
 const addBtn = document.querySelector(".add-btn");
 const todoItemsSection = document.querySelector("#todo-items");
+const todoElement = document.querySelector("#todo");
+//add a check to stop user for creating a Todo with empty todo value
+todoElement.addEventListener("input", () => {
+  if (todoElement.value === "") {
+    addBtn.disabled = true;
+  } else {
+    addBtn.disabled = false;
+  }
+});
 
 addBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  //add a check to stop user for creating a Todo with empty todo value
+  if (todoElement.value === "") return;
 
-  const todoElement = document.querySelector("#todo");
   const todoItem = document.createElement("div");
   todoItem.className = "todo-item";
   todoItem.innerHTML = `

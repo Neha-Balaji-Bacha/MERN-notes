@@ -6,7 +6,7 @@
 //Need
 //When we want fast searching.
 // With a Map, you can check directly using the key.
-// Arrays only store values with numeric indexes.
+// Arrays only store values with numeric indexes.`
 // Objects can store key–value, but keys must be strings/symbols.
 // Map solves this by allowing any type of key.
 //Map preserves the insertion order.
@@ -225,16 +225,16 @@ function upperbound(arr, target) {
 }
 console.log(upperbound([1, 2, 6, 6, 11, 11, 11, 15], 6));
 
-// | Feature / Function              | Object                                                          | Map                                                | Set                                       |
-// | ------------------------------- | --------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------- |
-// | **Add item**                    | `obj[key] = value`                                              | `map.set(key, value)`                              | `set.add(value)`                          |
-// | **Check existence**             | `key in obj`                                                    | `map.has(key)`                                     | `set.has(value)`                          |
-// | **Get value**                   | `obj[key]`                                                      | `map.get(key)`                                     | N/A (use `has`)                           |
-// | **Delete item**                 | `delete obj[key]`                                               | `map.delete(key)`                                  | `set.delete(value)`                       |
-// | **Size**                        | `Object.keys(obj).length`                                       | `map.size`                                         | `set.size`                                |
-// | **Iterate keys**                | `for (let key in obj)` or `Object.keys(obj).forEach()`          | `for (let key of map.keys())` or `map.forEach()`   | `for (let val of set)` or `set.forEach()` |
-// | **Iterate values**              | `Object.values(obj)`                                            | `for (let val of map.values())` or `map.forEach()` | `for (let val of set)` or `set.forEach()` |
-// | **Iterate entries (key-value)** | `Object.entries(obj)`                                           | `for (let [key, val] of map)` or `map.forEach()`   | Not applicable (no key-value)             |
-// | **Clear all items**             | `for (let key in obj) delete obj[key]`                          | `map.clear()`                                      | `set.clear()`                             |
-// | **Convert to Array**            | `Object.keys(obj)`, `Object.values(obj)`, `Object.entries(obj)` | `Array.from(map)` or `[...map]`                    | `Array.from(set)` or `[...set]`           |
-// | **Default key type**            | Strings or Symbols                                              | Any type                                           | Values only, unique                       |
+// | Feature / Function                Object                                                           Map                                                | Set                                       |
+// | ----------------------------| --------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------- |
+// | Add item                    | `obj[key] = value`                                              | `map.set(key, value)`                              | `set.add(value)`                          |
+// | Check existence             | `key in obj`                                                    | `map.has(key)`                                     | `set.has(value)`                          |
+// | Get value                   | `obj[key]`                                                      | `map.get(key)`                                     | N/A (use `has`)                           |
+// | Delete item                 | `delete obj[key]`                                               | `map.delete(key)`                                  | `set.delete(value)`                       |
+// | Size                        | `Object.keys(obj).length`                                       | `map.size`                                         | `set.size`                                |
+// | Iterate keys                | `for (let key in obj)` or `Object.keys(obj).forEach()`          | `for (let key of map.keys())` or `map.forEach()`   | `for (let val of set)` or `set.forEach()` |
+// | Iterate values              | `Object.values(obj)`                                            | `for (let val of map.values())` or `map.forEach()` | `for (let val of set)` or `set.forEach()` |
+// | Iterate entries (key-value) | `Object.entries(obj)`                                           | `for (let [key, val] of map)` or `map.forEach()`   | Not applicable (no key-value)             |
+// | Clear all items             | `for (let key in obj) delete obj[key]`                          | `map.clear()`                                      | `set.clear()`                             |
+// | Convert to Array            | `Object.keys(obj)`, `Object.values(obj)`, `Object.entries(obj)` | `Array.from(map)` or `[...map]`                    | `Array.from(set)` or `[...set]`           |
+// | Default key type            | Strings or Symbols                                              | Any type                                           | Values only, unique                       |

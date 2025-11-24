@@ -1,25 +1,3 @@
-console.log(true + true); //2
-console.log(true + 3); //4
-console.log("hello" + 30 / 2); //hello15
-console.log(" " + 5); //" 5"
-let n = " ";
-console.log(n); //single space
-console.log(n.length); //1 length
-console.log(n + 3);
-let empty = [] + []; //""
-console.log(empty);
-console.log([] + 5); //"5"
-console.log([1, 2, 3] + 8); //"1,2,38"
-console.log([5] - 2); // 3   ([5] --> "5" --> 5)
-console.log([5, 6] - 2); // NaN ([5,6] --> "5,6" --> NaN)
-console.log(null + 5); // 5   (null --> 0)
-console.log(undefined + 5); // NaN (undefined --> NaN)
-
-console.log(true * 5); // 5   (true --> 1)
-console.log(false * 5); // 0   (false --> 0)
-console.log(10 / null); // Infinity (null --> 0, so 10/0 = Infinity)
-console.log(10 / undefined); // NaN
-
 // Ques: Given a 2d matrix, reverse each odd columns and print it
 // Input =====> TC : O(N) SC : O(1)
 // const arr = [
@@ -68,3 +46,26 @@ for (let i = 0; i < arr1.length; i++) {
   }
 }
 console.log(result);
+
+
+console.log(true + true); //2
+console.log(true + 3); //4
+console.log("hello" + 30 / 2); //hello15
+console.log(" " + 5); //" 5"
+let n = " ";
+console.log(n); //single space
+console.log(n.length); //1 length
+console.log(n + 3);
+let empty = [] + []; //""
+console.log(empty);
+console.log([] + 5); //"5"
+console.log([1, 2, 3] + 8); //"1,2,38"
+console.log([5] - 2); // 3   ([5] --> "5" --> 5)
+console.log([5, 6] - 2); // NaN ([5,6] --> "5,6" --> NaN)
+console.log(null + 5); // 5   (null --> 0)
+console.log(undefined + 5); // NaN (undefined --> NaN)
+
+console.log(true * 5); // 5   (true --> 1)
+console.log(false * 5); // 0   (false --> 0)
+console.log(10 / null); // Infinity (null --> 0, so 10/0 = Infinity)
+console.log(10 / undefined); // NaN

@@ -1,0 +1,85 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+   height: 700px;
+   width: 700px;
+   background-color: rgb(134, 120, 120);
+   margin: 20px;
+}
+.box1{
+  margin: 20px;
+  height: 100px;
+  width:100px;
+  background-color: bisque;
+}
+.box2{
+   margin: 20px;
+  height: 100px;
+  width:100px;
+  background-color: rgb(176, 138, 175);
+}
+.box3{
+  margin: 20px;
+  height: 100px;
+  width:100px;
+  background-color: rgb(181, 191, 146);
+}
+/* body:hover .transition {
+  width: 700px;
+}
+.transition{
+  transition-property: width;
+  transition-duration:1.5s;
+  transition-timing-function:ease-in;
+  transition-delay:0.5s;
+  transition: width 1s ease-in-out 0.5s;
+} */
+
+/*body:hover .transform{ 
+  transform: rotate(45deg);
+  transform:translateY(40px);  
+  transform: scale(1.5);  
+  transform:skew(20deg);
+  transform:translateX(40px) rotate(45deg) scale(1.5) skew(30deg); because of frequent change we can not analyze 
+}*/
+
+body:hover .animation{
+  /* animation-name:normal;
+  animation-duration:1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+  animation-direction: alternate; */
+  animation:wave 1s ease-in-out 0.5s infinite alternate;
+}
+.box1{
+  animation-delay: 0.5s;
+  background-color: blanchedalmond;
+}
+.box2{
+  animation-delay: 1s;
+  background-color: rgb(205, 246, 255);
+}
+.box3{
+  animation-delay: 2s;
+  background-color: rgb(86, 47, 79);
+}
+
+@keyframes wave{
+  from{
+    transform: translateY(6px);
+  }
+  to{
+    transform: translateY(60px);
+  }
+}
