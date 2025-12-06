@@ -5,9 +5,9 @@ DOM Traversing – Complete Table
 | parentElement            | Parent element node                                  | No                   | Go one level up, only elements                             |
 | parentNode               | Parent node (element, document, comment, etc.)       | Sometimes            | Needed when working with all node types                     |
 | children                 | HTMLCollection of child elements                     | No                   | Access only element children                               |
-| childNodes               | NodeList of all child nodes                           | Yes                  | Includes whitespace, comments, and text nodes               |
+| childNodes               | NodeList of all child nodes (text,ele)                           | Yes                  | Includes whitespace, comments, and text nodes               |
 | firstElementChild        | First child which is an element                      | No                   | Access first visible element                                |
-| firstChild               | First child node                                      | Yes                  | Can return text node due to whitespace                      |
+| firstChild               | First child node(text,ele)                                     | Yes                  | Can return text node due to whitespace                      |
 | lastElementChild         | Last child element                                   | No                   | Access last visible element                                 |
 | lastChild                | Last child node                                       | Yes                  | Can return whitespace                                       |
 | nextElementSibling       | Next sibling element                                 | No                   | Move horizontally between elements                          |
