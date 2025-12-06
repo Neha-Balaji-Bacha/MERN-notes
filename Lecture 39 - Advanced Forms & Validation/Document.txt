@@ -99,10 +99,10 @@ blur: fires when input loses focus.
 
 | Event      | When It Fires       | Common Usage                     |
 | ---------- | ------------------- | -------------------------------- |
-| **input**  | Every keystroke     | live search, password strength   |
-| **change** | Final value changed | dropdown select, checkbox, radio |
-| **focus**  | User enters input   | show hints, highlight            |
-| **blur**   | User leaves input   | validation, auto-save            |
+|   input    | Every keystroke     | live search, password strength   |
+|   change   | Final value changed | dropdown select, checkbox, radio |
+|   focus    | User enters input   | show hints, highlight            |
+|   blur     | User leaves input   | validation, auto-save            |
 
 ==FileReader==
 When a user selects a file, the browser provides a File object inside the inputs files list. 
