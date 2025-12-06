@@ -2,7 +2,7 @@
 each element */
 * {
   /* color is applied using existing color name */
-  color: green;
+  color: rgb(87, 128, 0);
   /* we can add a font-family inside font-family property
    & the preferences if browser failed to load some font  */
   font-family: Arial, Helvetica, sans-serif;
