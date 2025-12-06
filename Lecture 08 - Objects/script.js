@@ -10,7 +10,7 @@ const studentObj = {
   address: "Pune",
   Class: 12,
 };
-// //create variables to store name ,age,add,Class of parent
+ //create variables to store name ,age,add,Class of parent
 const parentName = "Riya";
 const parentage = 35;
 const parentAddress = "pune";
