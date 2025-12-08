@@ -1,0 +1,49 @@
+-Why Browser Storage Is Required ?
+They do NOT remember data after:
+Refresh
+Reopen
+Navigation ,so browser required storage.
+
+-What is Web Storage API?
+It provides two storage mechanisms:
+1. ocalStorage
+2. sessionStorage
+
+Both store data as key–value pairs
+Both store strings only
+Both are synchronous
+
+=====localStorage======
+>> Definition::
+LocalStorage is a browser storage that stores data persistently (until manually cleared).
+
+>> Key Features::
+Data does NOT expire
+Accessible across all tabs/windows of same origin
+Storage limit ~5–10MB
+Only stores strings
+Follows Same-Origin Policy
+Synchronous API
+
+>> methods :
+setItem(key, value)	: Save data
+getItem(key) : Retrieve data
+removeItem(key) :	Delete key
+clear()	: Delete all keys
+key(index)	: Get key name by index
+
+
+>> Use Cases :
+Dark mode setting
+Login page
+Cart data
+
+>> Limitations
+Only strings
+Size ~5MB
+Not safe for sensitive data 
+Synchronous : slow for large data
+Cannot share data across different origins
+
+QuotaExceededError : Browser storage is full by doing setItem
+

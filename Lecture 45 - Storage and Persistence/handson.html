@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Persistent Counter</h2>
+    <h1 id="count">0</h1>
+    <button id="btn">Increase Count</button>
+
+    <h2 id="mode" style="color:red">Dark Mode</h2>
+
+    <script>
+        localStorage.setItem("neha","nikita");
+        localStorage.setItem("ankita","mansi");
+
+        localStorage.removeItem("ankita");
+
+        console.log(localStorage.length);
+
+        console.log(localStorage.getItem("neha"));
+
+        console.log(localStorage.key(0));
+
+        localStorage.setItem("nikhil","Diksha");
+
+        let increase = Number(localStorage.getItem("counter")) || 0;
+        const count = document.querySelector("#count");
+        count.textContent = increase;
+        document.querySelector("#btn").addEventListener("click",() => {
+            increase++;
+            count.textContent = increase;
+            localStorage.setItem("counter",increase);
+        });
+        //Theme changer
+        const dark = document.querySelector("#mode");
+        let savedMode = localStorage.getItem("mode");
+        if(savedMode){
+            dark.className = savedMode;
+        }
+        dark.addEventListener("click",() =>{
+            if(dark.className==="dark"){
+               dark.className="light";
+               localStorage.setItem("mode","light");
+            }
+            else{
+                dark.className = "dark";
+                localStorage.setItem("mode", "dark");
+            }
+        });
+        // JSON.stringify() : convert JS data - string
+        // JSON.parse() : convert string - back to JS data
+
+        let list = JSON.parse(localStorage.getItem("students")) || [];
+        list.push({name : "mansi",age : 21 });
+        localStorage.setItem("students",JSON.stringify(list));
+    </script>
+</body>
+</html>
