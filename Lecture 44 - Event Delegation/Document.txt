@@ -1,0 +1,57 @@
+1. What are they?
+call(), apply(), and bind() are function methods in JavaScript.
+Every function automatically has access to them because they come from:
+Function.prototype
+
+2. Why do we need them?
+Because in JavaScript, this is dynamic and depends on how a function is called.
+These methods allow us to manually control this.
+
+=== call()====
+The function executes immediately.
+Arguments are passed one by one (comma-separated).
+this is set temporarily only for that execution.
+
+====apply()===
+The function executes immediately (same as call).
+Arguments must be passed inside an array.
+this is also set temporarily only during this call.
+
+====bind()====
+The function does NOT execute immediately.
+It returns a new function.
+Arguments are passed like call() (comma-separated).
+this becomes permanently bound to the object for all future calls of that new function.
+
+event.target : The actual clicked element
+event.currentTarget	: The element that has the event listener (parent)
+element.matches() is a very useful method when you want to check whether the clicked child matches a specific selector.return boolean val.
+
+=========Event Delegation===============
+stopPropagation() prevents the event from traveling further along the propagation path.
+- Which direction “further” means depends on the current phase:
+
+- If called during capturing, it prevents the event from continuing downward to later capture 
+listeners and prevents reaching the target and the later bubbling phase.
+
+- If called during the target phase, it prevents the event from entering the bubbling phase 
+(so ancestor listeners in bubbling won’t run).
+
+- If called during the bubbling phase, it prevents the event from continuing upward to ancestor 
+listeners that haven’t run yet.but other listeners on the same element still run.
+this all correct i think but target how differently work other than bubbling phase
+
+What it stops:
+Capturing : stops before reaching target.
+Target : stops bubbling.
+Bubbling : stops moving to ancestor listeners.Default phase
+
+What it does NOT stop:
+Other event listeners on the same element.
+
+stopImmediatePropagation() — Stop
+
+Stops:
+- Further capturing
+- Target phase bubbling
+- Prevents other listeners on same element from running

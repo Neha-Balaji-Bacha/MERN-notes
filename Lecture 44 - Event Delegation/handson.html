@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul id="shoppingList">
+  <li data-price="30">Apples</li>
+  <li data-price="45">Bananas</li>
+  <li data-price="60">Oranges</li>
+</ul>
+<button id="clearBtn">Clear All</button>
+<div id="container1">parent
+    <div class="container2">
+    <div class="child">child1</div>
+    <div class="child">child2</div>
+    <div class="child">child3</div>
+    </div>
+</div>
+<script>
+    const ul = document.querySelector("#shoppingList");
+    ul.addEventListener("click",(event)=>{
+        console.log(event.target.matches("li"));
+        console.log(event.target);
+        console.log(event.target.tagName);
+        console.log(event.target.innerText);
+        console.log(event.target.innerHTML);
+        console.log(event.target.textContent);
+        console.log(event.target.dataset.price);
+        console.log(event.currentTarget);
+    });
+    document.body.addEventListener("click", () => {
+     console.log("BODY");
+    });
+
+    //Bubbling
+//     const container1 = document.querySelector("#container1");
+//     container1.addEventListener("click", (event) => {
+//     console.log("outer");
+//     // event.stopPropagation();
+//     });
+//     const container2 = document.querySelector(".container2");
+//     container2.addEventListener("click", (e) => {
+//      console.log("inner");
+//     //  e.stopPropagation();
+//    });
+//     const children = document.querySelectorAll(".child");  
+//     children.forEach(child =>{
+//     child.addEventListener("click", (e) => {
+//       console.log("child clicked:", e.target.innerText);
+//     e.stopPropagation();
+//     });
+//    });
+
+//capturing phase
+  const container1 = document.querySelector("#container1");
+    container1.addEventListener("click", (event) => {
+    console.log("outer");
+    // event.stopPropagation();
+    },true);
+    const container2 = document.querySelector(".container2");
+    container2.addEventListener("click", (e) => {
+     console.log("inner listener1");
+     e.stopPropagation();
+    // e.stopImmediatePropagation();
+   },true);
+    const children = document.querySelectorAll(".child");
+    children.forEach(child =>{
+    child.addEventListener("click", (e) => {
+     console.log("child clicked:", e.target.innerText);
+    // e.stopPropagation();
+    },true);
+   });
+
+   //When you want to completely prevent any other listeners on the same element ex: Avoid accidental triggers
+    //stopimmediatepropagation
+    container2.addEventListener("click", (e) => {
+     console.log("inner listener2");
+    // e.stopPropagation();
+   },true);
+
+//To borrow methods between objects,reuse functions instead of writing again.
+//call : when You want to pass arguments one by one in call
+const person1 = { name: "Neha" };
+const person2 = { name: "Nikita" };
+
+function greet() {
+  console.log("Hi " + this.name);
+}
+
+greet.call(person1); // Hi Neha
+greet.call(person2); // Hi Nikita
+
+//apply : when we want to pass arguments as an array
+function introduce(country, age) {
+  console.log(`I am ${this.name} from ${country}, age ${age}`);
+}
+const person = { name: "Neha" };
+introduce.apply(person, ["India", 22]);
+
+//bind() : When we need a new function with fixed this
+function greet1() {
+  console.log("Hello " + this.name);
+}
+const person3 = { name: "Neha" };
+const greetNeha = greet1.bind(person3);
+greetNeha();    
+
+</script>
+</body>
+</html>
