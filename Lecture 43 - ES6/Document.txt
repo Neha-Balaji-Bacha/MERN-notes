@@ -1,0 +1,87 @@
+what is class ?
+class is used for grouping prototype,constructor and meth.
+Classes provide a clean, organized, reusable structure for creating multiple objects.
+They make code easier to maintain, especially compared to old prototype-based syntax.
+A class acts like a blueprint for creating objects.
+class is not hoisted before execute body
+
+>>Note : prototype and class both are same working only difference is it provide cleaner syntax
+
+-this in Classes
+In a class, this refers to the newly created object instance.
+The value of this depends on how a function is called, not where it is defined.
+
+>> Constructor inside class
+Only one constructor allowed per class.
+If not defined, JavaScript creates an empty constructor.
+
+>>prototype inside class
+Methods defined inside the class automatically go to the prototype.
+
+==============Getter & Setter (Encapsulation)===========
+Why used?
+To implement encapsulation.
+Getter : read value safely.
+Setter : update value with validation or extra logic.
+Hides internal implementation while keeping clean property-like syntax.
+
+::Rules
+Getter must return a value.otherwise returns undefined.
+Setter must take exactly one parameter.
+Both use same property name.
+No parentheses when accessing.
+Stored on the prototype.
+Getter/Setter work with both objects & classes.
+
+>> Why property like _name?
+To prevent recursion:
+set name(v) { this.name = v }  //infinite loop
+Solution:
+set name(v) { this._name = v }
+
+>>Drawbacks of getter and setter
+Do NOT provide true privacy
+_name is just a naming convention; still accessible from outside.
+Need private fields (#) for actual security
+Getter/Setter only control access, they don’t hide the data.
+
+===========private fields==========
+
+What are private fields?
+The class properties private declared with #.
+Cannot be accessed outside the class.
+It can be property or method
+
+:: Rules
+Must be declared in class body.
+Cannot be accessed outside class : SyntaxError.
+Each object instance gets its own private copy.
+Changing one object’s private data does not affect others.
+so private field belong to individual obj instance
+
+>> Why used?
+To protect sensitive data like PIN, balance, password.
+Getter/Setter allow access outside access.
+Perfect for encapsulation + security.
+
+=======What is static?===========
+Belongs to class, not instance.
+Access using ClassName.property.
+Cannot access instance data (this) inside static.
+
+Used for:
+Shared values (ex. companyName)
+Utility functions
+
+:: Rules
+Call using Class.method(), not obj.method().
+Not copied to instances.
+Cannot access static via object.
+
+====why used destructuring=====
+Why used?
+Makes constructor cleaner.
+Extracts multiple values from one object.
+Allows default values.
+Safe even if some values are missing.
+when we have arr obj data

@@ -1,0 +1,61 @@
+<!-- create mobile class -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class Mobile{
+        #phoneLock = 987;
+        constructor(name,model,price,password){
+            this.name = name;
+            this.model = model;
+            this.price = price;
+            this._password = password;
+            this.battery = 0;
+        }
+        charge(){
+          this.battery += 20;
+          console.log("Battery after charge : ",this.battery);
+        }
+        use(){
+          this.battery -= 10;
+          console.log("Battery after use : ",this.battery);
+        }
+        get password(){
+            return this._password;
+        }
+        set password(value){
+            if(value.length < 3){
+                console.log("password is not valid");
+                return;
+            }
+            this._password = value;
+        }
+        #lock(){
+            return "It is private";
+        }
+        secure(){
+            console.log(this.#lock());
+            console.log(this.#phoneLock);
+        }
+        static comparePrice(m1,m2){
+            return m1.price > m2.price ? `${m1.model} more costlier` : `${m2.model} more costlier`;
+        }
+      }
+      const features = new Mobile("vivo","V15",98765,123);
+      const f1 = new Mobile("samsung","S23",98765,8765);
+      const f2 = new Mobile("Motorola","M67",89765,876);
+      console.log(Mobile.comparePrice(f1,f2));
+      console.log(features);
+    //console.log(Mobile.lock()); //error
+      features.secure();//valid beacuase cannot called directly here
+      console.log(features.password)//getter
+      features.password = "jhgf";//setter
+      console.log(features.password);
+    </script>
+</body>
+</html>
