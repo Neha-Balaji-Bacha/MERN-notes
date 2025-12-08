@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      padding:20px;
+      font-family: Arial;
+    }
+    textarea{
+      width: 300px;
+      height: 120px;
+      padding:10px;
+      font-size:16px;
+    }
+    button{
+      margin-top:10px;
+      padding:8px 15px;
+      font-size:16px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Auto Save Textarea</h2>
+  <textarea id="text"></textarea>  
+  <br>
+  <button id="clearBtn">Clear Saved Text</button>
+
+   <input id="text" placeholder="Type something" />
+
+  <script>
+    const autoSaveKey = "autoSaveKey";
+    const textarea = document.getElementById("text");
+    const clearBtn = document.getElementById("clearBtn");
+
+    textarea.value = localStorage.getItem(autoSaveKey) || "";
+
+    textarea.addEventListener("input", () => {
+      localStorage.setItem(autoSaveKey, textarea.value);
+    });
+
+    clearBtn.addEventListener("click", () => {
+      localStorage.removeItem(autoSaveKey);
+      textarea.value = "";
+      alert("Saved text cleared!");
+    });
+
+  const key = "lastWord";
+
+  const saved = JSON.parse(sessionStorage.getItem(key));
+  document.getElementById("text").value = saved || "";
+
+  document.getElementById("text").addEventListener("input", () => {
+    sessionStorage.setItem(key, JSON.stringify(document.getElementById("text").value));
+  });
+
+  </script>
+
+</body>
+</html>

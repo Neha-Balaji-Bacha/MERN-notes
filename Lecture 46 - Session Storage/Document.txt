@@ -1,0 +1,22 @@
+===========Session Storage=========
+Definition:
+SessionStorage stores data only for the lifespan of the tab.
+When tab closes : data disappears.
+
+>> key features
+ Lifetime    : Until tab/window closes 
+ Sharing     : Not shared across tabs  
+ Size        : ~5MB                    
+ Data type   : String only             
+ Same-origin : Yes                     
+
+
+Use Cases:
+Multi-step forms
+Temporary form save
+
+Limitations:
+Tab-specific only
+Clears on tab close
+Same risk as localStorage
+Only string storage
