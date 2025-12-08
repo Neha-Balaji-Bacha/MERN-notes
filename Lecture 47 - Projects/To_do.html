@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 8px;
+      width: 220px;
+      margin-right: 5px;
+    }
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>To-Do List (sessionStorage)</h2>
+
+  <input type="text" id="taskInput" placeholder="Enter a task..." />
+  <button id="addBtn">Add Task</button>
+  <button id="clearBtn">Clear All</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const addBtn = document.getElementById("addBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const taskList = document.getElementById("taskList");
+
+    const STORAGE_KEY = "sessionTasks";
+
+    let tasks = JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || [];
+
+    function renderTasks() {
+      taskList.innerHTML = "";
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${task}`;
+        taskList.appendChild(li);
+      });
+    }
+
+    renderTasks();
+
+    addBtn.addEventListener("click", () => {
+      const value = taskInput.value.trim();
+
+      if (!value) {
+        alert("Please enter a task");
+        return;
+      }
+
+      tasks.push(value); 
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+      renderTasks();          
+      taskInput.value = ""; 
+    });
+
+    clearBtn.addEventListener("click", () => {
+      tasks = [];
+      sessionStorage.removeItem(STORAGE_KEY);
+      renderTasks();
+      alert("All tasks cleared for this session!");
+    });
+  </script>
+
+</body>
+</html>
