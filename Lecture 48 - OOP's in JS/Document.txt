@@ -1,0 +1,41 @@
+What is Oop's ?
+It helps in organizing data and behavior together, making code reusable, scalable, and easier to maintain.
+OOP is mainly based on four principles: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+EX : all cars have properties like color, model, speed, and methods like start() and stop().
+We can create many car objects from this class.
+It represents real-world behavior in code.
+
+1. Encapsulation
+Encapsulation means protecet sensitive data and methods inside a class and restrict direct access to some components.
+Ex.Encapsulation protect internal data like balance using private fields and exposes only required methods like deposit or Balance.
+
+2.Inheritance
+Inheritance allows one class to inherit/acquire the properties and behaviors of another class.
+It promotes code reuse
+- JavaScript does NOT allow accessing  private field in another class’s.
+Ex. animals (is a relation)
+
+-this always refers to the child instance, even when used inside the parent class. JavaScript initializes the child object first 
+and passes it through the parent constructor, so both constructors work on the same object.
+-We use super() to call the parent constructor so the child class inherits the parent’s properties correctly.
+- If a child class has a constructor and you don’t call super(), JavaScript will throw an error.
+-JavaScript requires the parent constructor to run before using this in the child.
+-When super() runs, JavaScript creates the Child instance first, then calls the Parent constructor on that SAME object.
+
+-need
+Code reuse
+Avoid duplication
+Share common logic
+Build hierarchies
+
+3.Polymorphism
+Polymorphism means ‘many forms’.
+When the same method name performs different actions depending on the object calling it.
+Ex. Payment system
+
+4.Composition
+Composition means creating complex objects by combining simpler objects, instead of using inheritance.
+It represents a “has-a” relationship
+Ex. Example: A car has a engine.
+Composition is when one object contains another object.
+A Car has an Engine. This avoids deep inheritance and makes code flexible.

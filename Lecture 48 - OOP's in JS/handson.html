@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+class Parent {
+  constructor() {
+    // console.log("Parent this:", this);
+    this.count = 0;
+  }
+  increase(){
+    this.count++;
+  }
+}
+
+class Child extends Parent {
+  constructor(id) {
+    // console.log(this.id=id); throw error
+    super();
+    console.log("Child this:", this);
+    // console.log(this.id=id);
+    super.increase();//here increase taken from its parent
+    this.increase = () => {
+      this.count += 2; //same this as the child object.
+    };
+  }
+}
+let c = new Child();
+c.increase();
+console.log("Count after c.increase():", c.count);
+let obj = new Child(9876);
+
+//Neha in output : Because JavaScript automatically creates a constructor in the child class when you don’t write one.
+// class Employee {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+// class Manager extends Employee {
+// }
+
+// let m = new Manager("Neha");
+// console.log(m.name); // ?
+
+class A {
+  constructor() { this.x = 1; }
+}
+
+class B extends A {
+  constructor() {
+    super();
+    this.x = 2;
+  }
+}
+
+class C extends B {
+  constructor() {
+    super();
+    this.x = 3;
+  }
+}
+
+let obj1 = new C();
+console.log(obj1.x);
+</script>
+</body>
+</html>
