@@ -1,0 +1,34 @@
+1.Synchronous(blocking)
+Code runs line by line
+Each task waits for the previous one to finish
+
+2.Asynchronous (Non-Blocking)
+Long tasks run in background
+JS does not wait
+Result comes later
+
+-Async is used when a task takes time, such as API calls, file uploads, payments, or autosave.
+>>Why async is needed in frontend?
+To avoid UI freezing
+
+>>Name 5 real-life async examples
+API calls, login, payments, uploads, autosave
+
+>>Is async only for fetch?
+No (timers, storage, uploads, DB)
+
+>>callback : A callback is a function that is passed as an argument to another function and is called later.
+Callback is passed, not returned
+It is executed later, not immediately
+
+>>setTimeout executes callback once after delay. ex : show pop up after 5 sec
+setTimeout(callback, delay);
+>>setInterval executes callback repeatedly. ex : OTP resend timer
+setInterval(callback, delay);
+Both are asynchronous.
+They use Web APIs.
+
+>> Note : Canceling timers means stopping a setTimeout or setInterval using clearTimeout or clearInterval 
+so the callback does not execute.
+
+>> Async in behaviour : listeners(wait for user action),setInterval,setTimeout

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+    </body>
+    <script>
+        // Constructor inheritance is used to inherit properties
+        // It copies parent properties into the child object
+        // It does NOT inherit methods
+        // In ES5, to inherit parent properties, we must execute the parent constructor in the context of the child object.
+        // That’s exactly what call, apply, and bind do : they control what this refers to.ES5
+
+        // call() in constructor inheritance : mostly used
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        function Student(name, age, rollNo) {
+            Person.call(this, name, age);
+            this.rollNO = rollNo;
+        }
+        const s1 = new Student("Neha", 22, 101);
+        console.log(s1);
+
+        //apply() in constructor inheritance
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        function Student(name, age, rollNo) {
+            Person.apply(this, [name, age]);
+            this.rollNO = rollNo;
+        }
+        const s2 = new Student("Nikita", 22, 101);
+        console.log(s2);
+
+        //bind() in constructor inheritance : but not recommended because bind does not execute immediately.It Creates an extra function
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.sayHello = function () {
+            return "Hello " + this.name;
+        };
+        function Student(name, age, rollNo) {
+            const boundPerson = Person.bind(this, name, age);
+            boundPerson();
+            this.rollNO = rollNo;
+        }
+        const s3 = new Student("Nikhil", 22, 101);
+        console.log(s3);
+        // console.log(s1.sayHello()); //error
+
+        //In call, apply, bind it doesnot provide total inheritance so we use combination of constructor inheritance(prop) ,Prototype inheritance(meth).
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.sayHello = function () {
+            return "Hello " + this.name;
+        };
+        function Student(name, age, rollNo) {
+            Person.call(this, name, age);
+            this.rollNO = rollNo;
+        }
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.constructor = Student;
+
+        const s4 = new Student("Nikhil", 56, 101);
+
+        console.log(s4.name);
+        console.log(s4.sayHello());
+
+        let count = 0;
+        const id = setInterval(() => {
+            console.log(count);
+            count++;
+            if (count === 3) {
+                clearInterval(id);
+            }
+        });
+
+        //contest
+        const pipe = (...fns) => value =>
+            fns.reduce((result, fn) => fn(result), value);
+
+        const compose = (...fns) => value =>
+            fns.reduceRight((result, fn) => fn(result), value);
+
+        const add2 = x => x + 2;
+        const multiply3 = x => x * 3;
+        const subtract1 = x => x - 1;
+
+        const pipeResult = pipe(add2, multiply3, subtract1)(5);
+        console.log("Pipe Result:", pipeResult);
+
+        const composeResult = compose(add2, multiply3, subtract1)(5);
+        console.log("Compose Result:", composeResult);
+
+    </script>
+
+</html>

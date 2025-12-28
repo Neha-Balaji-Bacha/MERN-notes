@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Typing Test</title>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                width: 100vw;
+                font-family: Arial, sans-serif;
+            }
+
+            .container {
+                width: 420px;
+                border: 2px solid black;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .box1 {
+                border: 2px solid black;
+                padding: 10px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 120px;
+                border: 2px solid black;
+            }
+
+            button {
+                margin-top: 10px;
+                float: right;
+                padding: 6px 14px;
+                cursor: pointer;
+            }
+
+            #timer {
+                font-weight: bold;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <p id="timer">00:02:00</p>
+
+            <div class="box1">
+                <p id="text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum aspernatur
+                    repudiandae laboriosam ex! Quod tempora eaque cumque vel odit soluta.
+                </p>
+            </div>
+
+            <textarea class="box2" disabled></textarea>
+            <button id="start">Start</button>
+        </div>
+        <script src="timer.js"></script>
+    </body>
+
+</html>
