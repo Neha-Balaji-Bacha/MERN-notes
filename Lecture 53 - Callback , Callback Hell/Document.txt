@@ -1,0 +1,54 @@
+🔹 What is a Callback?
+
+A callback is a function passed as an argument to another function and executed after some operation completes.
+
+📌 Used mainly for asynchronous tasks like:
+
+API calls
+
+Timers
+
+File handling
+
+Event handling
+Real Life
+
+You insert your card → machine verifies PIN → then gives cash.
+
+🔹 What is Callback Hell?
+
+Callback Hell happens when multiple async callbacks are nested inside each other, making code:
+
+Hard to read 😵
+
+Hard to debug
+
+Hard to maintain
+
+Also called Pyramid of Doom.
+
+Callback Hell – Real-Life Example (Multiple Dependent Steps)
+🛒 Online Shopping Checkout
+
+Real Life Steps
+
+Login
+
+Check cart
+
+Verify payment
+
+Place order
+
+Send confirmation
+
+Each step depends on the previous one.
+
+JavaScript defines the language, while the browser provides DOM, timers, and Web APIs that JavaScript can use.
+
+| Feature       | Real-Life Example |
+| ------------- | ----------------- |
+| setTimeout    | OTP expiry        |
+| setInterval   | Digital clock     |
+| clearTimeout  | Cancel OTP        |
+| clearInterval | Stop timer        |

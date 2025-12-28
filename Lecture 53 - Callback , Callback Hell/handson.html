@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            console.log("A");
+            setTimeout(() => {
+                console.log("B");
+            }, 0);
+            console.log("C");
+            console.log("Start");
+
+            //Synchronous Callback
+            [1, 2, 3].forEach(num => {
+                console.log(num);
+            });
+            console.log("End");
+
+            //var is function scoped Callback runs after loop ends i becomes 4
+            for (var i = 1; i <= 3; i++) {
+                setTimeout(() => {
+                    console.log(i);
+                }, 1000);
+            }
+
+            //Return works only for synchronous code, not for asynchronous results.
+            // function getData(cb) {
+            //     setTimeout(() => {
+            //         return 10;
+            //     }, 1000);
+            // }
+
+            // console.log(getData());//undefined
+
+            function getData(cb) {
+                setTimeout(() => {
+                    cb(10);
+                }, 1000);
+            }
+            getData(data => console.log(data));
+
+            function greet(name, cb) {
+                console.log("Hello " + name);
+                cb();
+            }
+
+            greet("Neha", () => {
+                console.log("Welcome!");
+            });
+
+            function add(a, b, cb) {
+                const result = a + b;
+                cb(result);
+            }
+
+            add(5, 3, res => {
+                console.log(res);
+            });
+
+
+            let count = 0;
+            const id = setInterval(() => {
+                count++;
+                console.log(count);
+
+                if (count === 5) {
+                    clearInterval(id);
+                }
+            }, 1000);
+
+        </script>
+    </body>
+
+</html>
