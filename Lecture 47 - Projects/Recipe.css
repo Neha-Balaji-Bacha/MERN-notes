@@ -1,0 +1,323 @@
+.intro-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  /* THIS controls when animationend fires */
+  animation: holdScreen 6s ease forwards;
+}
+
+/* Title animation */
+.intro-title {
+  font-size: 42px;
+  animation: titleIn 4s ease forwards;
+}
+
+/* Text animation with delay */
+.intro-text {
+  font-size: 18px;
+  margin-top: 10px;
+  animation: textIn 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+/* Keeps screen visible AFTER animations */
+@keyframes holdScreen {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+@keyframes titleIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #556c85;
+  --accent: #bc9d6e;
+  --success: #4caf50;
+  --danger: #e53935;
+  --card-bg: #ecd7bc;
+  --text-dark: #333;
+}
+/* ================= SECTION HEADINGS ================= */
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 18px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;       
+  height: 4px;
+  background: var(--accent);
+  border-radius: 4px;
+  margin: 8px auto 0; 
+}
+
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= BODY & BACKGROUND ================= */
+body {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background image layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SuflF7cppabKSVKQjFAyzGP7Fr_6B6RK8w&s");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  transition: filter 0.4s ease;
+}
+
+/* Blur background only when class is applied */
+body.blur-bg::before {
+  filter: blur(10px);
+}
+
+/* ================= APP CONTAINER ================= */
+.app-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: var(--card-bg);
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.nav-btn {
+  padding: 8px 20px;
+  margin:1px 60px;
+  background: #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  transition: 0.25s;
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.nav-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================= SPIN BUTTON ================= */
+.btn-spin {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= SCREENS ================= */
+.screen {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ================= FORM CARD ================= */
+.form-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #dac1c1;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= INPUTS ================= */
+input,
+textarea {
+  width: 100%;
+  padding: 9px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(85, 108, 133, 0.25);
+}
+
+/* ================= ERRORS ================= */
+.error {
+  color: var(--danger);
+  font-size: 12px;
+  height: 14px;
+}
+
+/* ================= OPTIONS ================= */
+.options-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* ================= RECIPE LIST ================= */
+.recipe-list {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-top: 15px;
+}
+
+/* ================= RECIPE CARD ================= */
+.recipe-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.25s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= IMAGE ================= */
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ================= CARD BODY ================= */
+.card-body {
+  padding: 15px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= ICONS ================= */
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* ================= COOK BUTTON ================= */
+.btn-cook {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #ffb74d, #f57c00);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ================= EMPTY MESSAGE ================= */
+.empty-msg {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* ================= SELECTED CARD ================= */
+.selected {
+  outline: 3px solid orange;
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-spin {
+    width: 100%;
+  }
+
+  .form-card {
+    width: 100%;
+  }
+}

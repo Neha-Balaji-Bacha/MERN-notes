@@ -1,176 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Roulette </title>
-    <style>
-        body{
-          display: flex;
-        }
-        .container1{
-          text-align: center;
-          border: 2px solid rgba(0, 0, 0, 0.139);
-          height: auto;
-          width: 500px;
-          line-height: 80%;
-          padding: 40px;
-          margin-left:20px;
-          background-color: #e9e0e3;
-        }
-        .container2{
-          border: 2px solid rgba(0, 0, 0, 0.111);
-          height: auto;
-          width: 50%;
-          background-color: #e9e0e3;
-        }
-        label{
-            display: block;
-            text-align: left;
-            line-height: 20px;
-        }
-        #recipeName,#time,textarea{
-            padding: 20px;
-            text-align: left;
-            width: 90%;
-        }
-        h3{
-             text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <div class="container1">
-    <form id="Recipe">
-    <h1>Recipe Roulette</h1>
-    <h3>Recipe Name</h3>
-    <br>
-    <input type="text" id="recipeName" placeholder="Enter Your Recipe">
-    <small class="error" id="nameError"></small>
-    <br>
-    <br>
-    <h3>Ingredients</h3>
-    <input type="text" id="ingredients" placeholder="Enter Your Ingredients">
-    <small class="error" id="ingredientsError"></small>
-    <br>
-    <h3>Cooking Time</h3>
-    <br>
-    <input type="number" id="time" placeholder="Enter Your Cooking Time">
-    <small class="error" id="timeError"></small>
-    <br>
-    <br>
-    <h3>Difficulty Level</h3>
-    <label><input type="radio" name="difficulty" value="Easy"> Easy</label>
-    <label><input type="radio" name="difficulty" value="Medium"> Medium</label>
-    <label><input type="radio" name="difficulty" value="Hard"> Very Difficult</label>
-    <small class="error" id="difficultyError"></small>
-    <br>
-    <br>
-    <h3>Category</h3>
-    <label><input type="radio" name="category" value="Breakfast"> Breakfast</label>
-    <label><input type="radio" name="category" value="Lunch"> Lunch</label>
-    <label><input type="radio" name="category" value="Dinner"> Dinner</label>
-    <label><input type="radio" name="category" value="Snacks"> Snacks</label>
-    <small class="error" id="categoryError"></small>
-    <br>
-    <button id="submit">Submit</button>
-    </form>
-    </div>
-    <div class="container2"></div>
-    <script>
-    const form = document.querySelector("#Recipe");
-    const recipeName = document.querySelector("#recipeName");
-    const ingredients = document.querySelector("#ingredients");
-    const time = document.querySelector("#time");
-    const submitBtn = document.querySelector("#submit");
-    const container2 = document.querySelector(".container2");
-    
-    submitBtn.disabled = true;
-    let recipes = JSON.parse(localStorage.getItem("recipes")) || [];
-    function setError(input,message){
-        input.nextElementSibling.textContent = message;
-    }
-    function clearError(input){
-        input.nextElementSibling.textContent = "";
-    }
-    function validateForm(){
-        let valid = true;
-        if(recipeName.value.length < 3){
-            setError(recipeName,"Minimum 3 char required");
-            valid = false;
-        }else clearError(recipeName);
 
-        if(ingredients.value === ""){
-            setError(ingredients, "Ingredients required");
-            valid = false;
-        }
-        else clearError(ingredients);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recipe Roulette</title>
+        <link rel="stylesheet" href="Recipe.css" />
+    </head>
 
-        if (time.value < 5) {
-        setError(time, "Minimum 5 minutes required");
-        valid = false;
-        } else clearError(time);
+    <body>
+        <section id="introScreen" class="screen intro-screen">
+            <h1 class="intro-title">🍽 Recipe Roulette</h1>
+            <p class="intro-text">Never wonder what to cook again</p>
+        </section>
 
-        const difficultyError = document.querySelector("#difficultyError");
-        if(!document.querySelector("input[name=difficulty]:checked")){
-            difficultyError.textContent = "select difficulty level";
-            valid = false;
-        }else difficultyError.textContent="";
-        
-        const categoryError = document.querySelector("#categoryError");
-        if (!document.querySelector("input[name='category']:checked")) {
-        categoryError.textContent = "Select category";
-        valid = false;
-       } else categoryError.textContent = "";
+        <header class="navbar">
+            <button class="nav-btn active" data-screen="addScreen">Add Recipe</button>
+            <button class="nav-btn" data-screen="allScreen">All Recipes</button>
+            <button class="nav-btn" data-screen="favScreen">Favorites</button>
+            <button class="nav-btn" data-screen="recentScreen">Recently Cooked</button>
 
-       submitBtn.disabled = !valid;
-    }
-    form.addEventListener("input", validateForm);
+            <button id="spinBtn" class="btn-spin">Pick for me..!!</button>
+        </header>
 
-        function getRecipe(){
-            container2.innerHTML="";
-            recipes.forEach((r,index) => {
-            container2.innerHTML += ` 
-            <div class="card" data-index="${index}">
-            <h2>Recipe Details</h2>
-            <p><strong>Name:</strong> ${r.name} ${r.favourite?"⭐" : ""}</p>
-            <p><strong>Ingredients:</strong> ${r.ingredients}</p>
-            <p><strong>Cooking Time:</strong> ${r.time} minutes</p>
-            <p><strong>Difficulty:</strong> ${r.difficulty}</p>
-            <p><strong>Category:</strong> ${r.category}</p>
-            <button class="favourite">Favourite</button>
-            <button class="remove">remove</button></div>`
-            });
-        }
-        getRecipe();
+        <section id="addScreen" class="screen">
+            <div class="card form-card">
+                <h2>Add New Recipe</h2>
+                <form id="recipeForm" novalidate>
+                    <div class="form-group">
+                        <label>Recipe Name</label>
+                        <input type="text" id="name" />
+                        <small class="error" id="nameError"></small>
+                    </div>
 
-        submitBtn.addEventListener("click",(e) => {
-        e.preventDefault();
-        const difficulty = document.querySelector("input[name='difficulty']:checked")?.value;
-        const category = document.querySelector("input[name='category']:checked")?.value;
+                    <div class="form-group">
+                        <label>Ingredients</label>
+                        <textarea id="ingredients"></textarea>
+                        <small class="error" id="ingredientsError"></small>
+                    </div>
 
-        const recipe = {
-            name:recipeName.value,ingredients:ingredients.value,time:time.value,difficulty,category,favourite:false
-        };
-        recipes.push(recipe);
-        localStorage.setItem("recipes",JSON.stringify(recipes));
-        getRecipe();
-        form.reset(); 
-        submitBtn.disabled = true;
-        });
-        container2.addEventListener("click",(e) => {
-            const card = e.target.closest(".card");
-            if(!card) return;
-            const index = card.dataset.index;
-            if(e.target.classList.contains("favourite")){
-              recipes[index].favourite = !recipes[index].favourite;
-            }
-             if(e.target.classList.contains("remove")){
-              recipes.splice(index,1);
-            }
-            localStorage.setItem("recipes",JSON.stringify(recipes));
-            getRecipe();
-        })
-    </script>
-</body>
+                    <div class="form-group">
+                        <label>Cooking Time (minutes)</label>
+                        <input type="number" id="time" min="5" />
+                        <small class="error" id="timeError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Difficulty</label>
+                        <div class="options-inline">
+                            <label><input type="radio" name="difficulty" value="Easy" /> Easy</label>
+                            <label><input type="radio" name="difficulty" value="Medium" /> Medium</label>
+                            <label><input type="radio" name="difficulty" value="Hard" /> Hard</label>
+                        </div>
+                        <small class="error" id="difficultyError"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Categories</label>
+                        <div class="options-inline">
+                            <label><input type="checkbox" name="category" value="Breakfast" /> Breakfast</label>
+                            <label><input type="checkbox" name="category" value="Lunch" /> Lunch</label>
+                            <label><input type="checkbox" name="category" value="Dinner" /> Dinner</label>
+                            <label><input type="checkbox" name="category" value="Snack" /> Snack</label>
+                        </div>
+                        <small class="error" id="categoryError"></small>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-primary" disabled>Add Recipe</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="allScreen" class="screen hidden">
+            <h2>All Recipes</h2>
+            <div id="allRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="allEmptyMsg">No recipes yet</p>
+        </section>
+
+        <section id="favScreen" class="screen hidden">
+            <h2>Favorites</h2>
+            <div id="favoriteRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="favEmptyMsg">No favorites yet</p>
+        </section>
+
+        <section id="recentScreen" class="screen hidden">
+            <h2>Recently Selected</h2>
+            <div id="recentRecipes" class="recipe-list"></div>
+            <p class="empty-msg" id="recentEmptyMsg">Nothing selected yet</p>
+        </section>
+
+        <script src="Recipe.js"></script>
+    </body>
+
 </html>
