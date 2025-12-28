@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            class Engine {
+                constructor(power) {
+                    this.power = power;
+                }
+            }
+            class Car {
+                constructor(engine) {
+                    this.engine = engine;
+                }
+            }
+            const e = new Engine(120);
+            const c = new Car(e);
+            console.log(c.engine.power);//car has a angine
+
+            class Battery {
+                constructor(capacity, type) {
+                    this.capacity = capacity;
+                    this.type = type;
+                }
+            }
+            class Mobile {
+                constructor(brand, price) {
+                    this.brand = brand;
+                    this.price = price;
+                    this.battery = battery;
+                }
+                showDetails() {
+                    console.log(this.barnd, this.price, this.battery.capacity, this.battery.type);
+                }
+            }
+            const B = new Battery(5000, "Li-ion");
+            const M = new Mobile("Samsung", 20000, B);//mobile has a battery
+            M.showDetails();
+        </script>
+    </body>
+
+</html>
