@@ -1,0 +1,50 @@
+setTimeout
+
+After the delay finishes, the callback is executed once.
+All code inside it runs completely, then it’s done.
+If cleared before the delay finishes, it never enters the queue.
+
+✔ Correct.
+
+Callback is added to the queue only after the delay ends
+
+Runs once
+
+No repeated queue buildup
+
+✅ setInterval
+
+During the delay, the timer keeps ticking.
+If the task takes long, callbacks can go into the queue while the previous one is still running.
+
+✔ Correct.
+
+Timer is clock-based
+
+Does not wait for task completion
+
+If JS is busy → callbacks wait in the queue
+
+Can cause queue buildup
+
+
+const id = setTimeout(() => {
+  console.log("Won't run");
+  clearTimeout(id);
+}, 2000);
+
+const id = setTimeout(() => {
+  console.log("Won't run");
+}, 2000);
+ clearTimeout(id);
+
+
+const id = setInterval(() => {
+  console.log("Won't run");
+  clearInterval(id);
+}, 2000);
+
+const id = setInterval(() => {
+  console.log("Won't run");
+}, 2000);
+ clearInterval(id);

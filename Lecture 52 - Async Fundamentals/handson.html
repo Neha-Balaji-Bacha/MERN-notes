@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script>
+            let count = 0;
+            const id2 = setInterval(() =>{
+                count++;
+                console.log(count);
+            },1000);
+            setTimeout(() => {
+                clearInterval(id2);
+            },3500);//1 2 3
+            
+            //clearInterval stops the next execution, not the current one.
+            let i = 0;
+
+            const id = setInterval(() => {
+                if (i === 3) {
+                    clearInterval(id);
+                    return;//return stops current execution
+                }
+                i++;
+                console.log(i);
+            }, 1000);
+ 
+
+            const id1 = setTimeout(() =>{
+                console.log("hello");
+            },1000);
+            setTimeout(() => {
+                clearTimeout(id1);
+            },1000);//nothing print
+            setTimeout(() => {
+                clearTimeout(id1);
+            },2000);//hello because to late to cancel
+
+            
+            
+
+        </script>
+    </body>
+
+</html>
