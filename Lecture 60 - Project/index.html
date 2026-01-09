@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="app">
+            <div class="form">
+                <form>
+                    <h2>Focus Flow</h2>
+                    <label for="duration">Study Duration</label>
+                    <input id="duration" required>
+                    <span id="durationerr" class="err"></span>
+                    <br>
+
+                    <label for="break">Break Duration</label>
+                    <input id="break" required>
+                    <span id="breakerr" class="err"></span>
+                    <br>
+
+                    <label for="cycles">No of Cycles</label>
+                    <input id="cycles" required>
+                    <span id="cycleserr" class="err"></span>
+                    <br>
+                    <button id="btn" type="button" disabled>Start</button>
+                </form>
+            </div>
+
+            <div class="dashboard">
+                <div class="board" id="phase"></div>
+                <br>
+                <div class="board" id="timer"></div>
+                <br>
+                <div class="board" id="noOfCycle"></div>
+                <br>
+                <button id="pause">Pause</button>
+                <div class="quote"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
