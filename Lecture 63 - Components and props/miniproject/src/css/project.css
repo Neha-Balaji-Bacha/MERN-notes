@@ -1,0 +1,62 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fb;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: column;    
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0 40px;
+}
+
+.navBar > button {
+  padding: 8px 18px;
+  margin: 0 6px;
+  border: none;
+  background: #e9eef5;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.navBar {
+  text-align: center;
+}
+.navBar section.page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  background: #ffffff;
+  padding: 45px 40px;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 32px;
+  margin-bottom: 14px;
+  color: #2d3a8c;
+}
+
+.container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+}
